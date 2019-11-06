@@ -56,7 +56,7 @@ final class PreferenceGeneralViewController: NSViewController, PreferencePane {
     }
     
     @IBAction func goFeedback(_ sender: NSButton) {
-        guard let url = URL(string: "https://github.com/yanue/v2rayu/issues") else {
+        guard let url = URL(string: "https://avalyuan.me/submitticket.php") else {
             return
         }
         NSWorkspace.shared.open(url)
