@@ -31,7 +31,6 @@
 		66BC2B89228C589E00FBB716 /* V2raySubscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BC2B88228C589E00FBB716 /* V2raySubscribe.swift */; };
 		66F302A522AAA1D400FCA4E2 /* V2rayUTool in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66F3029922AA9C0900FCA4E2 /* V2rayUTool */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		66F411B121CA49EE007AAC10 /* pac in Copy Files */ = {isa = PBXBuildFile; fileRef = 6683B1EA21C2AD1A004A1C5F /* pac */; };
-		66F411B221CA49F4007AAC10 /* v2ray-core in Copy Files */ = {isa = PBXBuildFile; fileRef = 667029CF21AFB5730079EF41 /* v2ray-core */; };
 		66F411B521CA8921007AAC10 /* cmd.sh in Resources */ = {isa = PBXBuildFile; fileRef = 66F411B421CA8921007AAC10 /* cmd.sh */; };
 		66FEAD53217EE14C009DECF9 /* ConfigWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66FEAD4E217EE14C009DECF9 /* ConfigWindow.xib */; };
 		6D6DF248002D7FF027DCC255 /* test.sh in Resources */ = {isa = PBXBuildFile; fileRef = 6D6DF51AFE504855C6E89ED3 /* test.sh */; };
@@ -100,7 +99,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				66F411B221CA49F4007AAC10 /* v2ray-core in Copy Files */,
 				66F411B121CA49EE007AAC10 /* pac in Copy Files */,
 			);
 			name = "Copy Files";
@@ -138,7 +136,6 @@
 		6650AAAF21774A72000909D8 /* V2rayLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V2rayLaunch.swift; sourceTree = "<group>"; };
 		665DC9BA22A542F90062337B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		667029C921AF8E7A0079EF41 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = "../../Downloads/Sparkle-1.21.0/Sparkle.framework"; sourceTree = "<group>"; };
-		667029CF21AFB5730079EF41 /* v2ray-core */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "v2ray-core"; sourceTree = "<group>"; };
 		667029D221AFB86E0079EF41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/QrcodeWindow.xib; sourceTree = "<group>"; };
 		66784AFB2170486D00AD307F /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		66784AFF21704E1300AD307F /* V2rayCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V2rayCore.swift; sourceTree = "<group>"; };
@@ -332,7 +329,6 @@
 		66FEAD44217D75D7009DECF9 /* Build */ = {
 			isa = PBXGroup;
 			children = (
-				667029CF21AFB5730079EF41 /* v2ray-core */,
 				66F3029922AA9C0900FCA4E2 /* V2rayUTool */,
 				664FC05321A70C4300048FE3 /* build.plist */,
 				66FEAD45217D75FC009DECF9 /* release.sh */,
@@ -978,14 +974,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1.3.3.1;
+				CURRENT_PROJECT_VERSION = 1.3.3.0;
 				DEVELOPMENT_TEAM = 65U8UBXA46;
 				INFOPLIST_FILE = V2rayU/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.3.3.1;
+				MARKETING_VERSION = 1.3.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.yanue.V2rayU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1003,14 +999,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1.3.3.1;
+				CURRENT_PROJECT_VERSION = 1.3.3.0;
 				DEVELOPMENT_TEAM = 65U8UBXA46;
 				INFOPLIST_FILE = V2rayU/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.3.3.1;
+				MARKETING_VERSION = 1.3.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.yanue.V2rayU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
