@@ -49,6 +49,8 @@
 	<string>NSApplication</string>
 	<key>SUFeedURL</key>
 	<string>https://gitee.com/raymao9/appcast/raw/master/appcast.xml</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
 	<key>SUPublicEDKey</key>
 	<string>N2b8X0aTvLNZlUIfRUxrJ9XzIfq6dTERw61Y1o8PKZk=</string>
 </dict>
