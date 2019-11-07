@@ -51,7 +51,6 @@
 		6D6DFFD18860EBE148F6DF1F /* PreferencePac.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D6DFE89E1A7BFE2AC1D8871 /* PreferencePac.xib */; };
 		7A14A83623741D1C00C9EB13 /* v2ray-core in Resources */ = {isa = PBXBuildFile; fileRef = 7A14A83523741D1C00C9EB13 /* v2ray-core */; };
 		7ACEE3C92374134000144D9A /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 7ACEE3C82374134000144D9A /* dsa_pub.pem */; };
-		7ADC04DE23732B660075FA26 /* v2ray-core in Resources */ = {isa = PBXBuildFile; fileRef = 7ADC04DD23732B660075FA26 /* v2ray-core */; };
 		F260898E336CFA5EAB07ADC9 /* Pods_V2rayU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A5CE4521706B5A009B08B2 /* Pods_V2rayU.framework */; };
 /* End PBXBuildFile section */
 
@@ -182,7 +181,6 @@
 		6D6DFFB29020127E034AD168 /* PreferenceGeneral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceGeneral.swift; sourceTree = "<group>"; };
 		7A14A83523741D1C00C9EB13 /* v2ray-core */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "v2ray-core"; sourceTree = "<group>"; };
 		7ACEE3C82374134000144D9A /* dsa_pub.pem */ = {isa = PBXFileReference; lastKnownFileType = text; name = dsa_pub.pem; path = Pods/Sparkle/bin/old_dsa_scripts/dsa_pub.pem; sourceTree = SOURCE_ROOT; };
-		7ADC04DD23732B660075FA26 /* v2ray-core */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "v2ray-core"; sourceTree = "<group>"; };
 		7AE4A13D2372D52F00694944 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/MainMenu.strings"; sourceTree = "<group>"; };
 		7AE4A13E2372D52F00694944 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/ConfigWindow.strings"; sourceTree = "<group>"; };
 		7AE4A13F2372D52F00694944 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/QrcodeWindow.strings"; sourceTree = "<group>"; };
@@ -337,7 +335,6 @@
 			children = (
 				7A14A83523741D1C00C9EB13 /* v2ray-core */,
 				7ACEE3C82374134000144D9A /* dsa_pub.pem */,
-				7ADC04DD23732B660075FA26 /* v2ray-core */,
 				66F3029922AA9C0900FCA4E2 /* V2rayUTool */,
 				664FC05321A70C4300048FE3 /* build.plist */,
 				66FEAD45217D75FC009DECF9 /* release.sh */,
@@ -562,7 +559,6 @@
 				6D6DF95B4749491F1D600B05 /* PreferenceAdvance.xib in Resources */,
 				6D6DFC1618D163A9DFE3B628 /* PreferenceGeneral.xib in Resources */,
 				7ACEE3C92374134000144D9A /* dsa_pub.pem in Resources */,
-				7ADC04DE23732B660075FA26 /* v2ray-core in Resources */,
 				6D6DFFD18860EBE148F6DF1F /* PreferencePac.xib in Resources */,
 				6D6DF51271B1AF55EACC79F2 /* PreferenceSubscribe.xib in Resources */,
 				6D6DF248002D7FF027DCC255 /* test.sh in Resources */,
@@ -986,14 +982,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1.3.3.1;
+				CURRENT_PROJECT_VERSION = 1.3.3.0;
 				DEVELOPMENT_TEAM = 65U8UBXA46;
 				INFOPLIST_FILE = V2rayU/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.3.3.1;
+				MARKETING_VERSION = 1.3.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.yanue.V2rayU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1011,14 +1007,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1.3.3.1;
+				CURRENT_PROJECT_VERSION = 1.3.3.0;
 				DEVELOPMENT_TEAM = 65U8UBXA46;
 				INFOPLIST_FILE = V2rayU/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.3.3.1;
+				MARKETING_VERSION = 1.3.3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = net.yanue.V2rayU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
