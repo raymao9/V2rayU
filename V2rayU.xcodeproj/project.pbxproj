@@ -49,6 +49,7 @@
 		6D6DFC1618D163A9DFE3B628 /* PreferenceGeneral.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D6DF76CE2762F4A33DB32BD /* PreferenceGeneral.xib */; };
 		6D6DFEA4ED44E1BE02451B6D /* PreferenceAbout.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D6DF5D99F2FBB7B53564B3B /* PreferenceAbout.xib */; };
 		6D6DFFD18860EBE148F6DF1F /* PreferencePac.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D6DFE89E1A7BFE2AC1D8871 /* PreferencePac.xib */; };
+		7ADC04DE23732B660075FA26 /* v2ray-core in Resources */ = {isa = PBXBuildFile; fileRef = 7ADC04DD23732B660075FA26 /* v2ray-core */; };
 		F260898E336CFA5EAB07ADC9 /* Pods_V2rayU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66A5CE4521706B5A009B08B2 /* Pods_V2rayU.framework */; };
 /* End PBXBuildFile section */
 
@@ -177,6 +178,7 @@
 		6D6DFE1CDFAD9828F2FDE1A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = V2rayU/Base.lproj/PreferenceAdvance.xib; sourceTree = SOURCE_ROOT; };
 		6D6DFFB0110E2442FC8337A5 /* format.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = format.js; sourceTree = "<group>"; };
 		6D6DFFB29020127E034AD168 /* PreferenceGeneral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceGeneral.swift; sourceTree = "<group>"; };
+		7ADC04DD23732B660075FA26 /* v2ray-core */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "v2ray-core"; sourceTree = "<group>"; };
 		7AE4A13D2372D52F00694944 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/MainMenu.strings"; sourceTree = "<group>"; };
 		7AE4A13E2372D52F00694944 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/ConfigWindow.strings"; sourceTree = "<group>"; };
 		7AE4A13F2372D52F00694944 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/QrcodeWindow.strings"; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 		66FEAD44217D75D7009DECF9 /* Build */ = {
 			isa = PBXGroup;
 			children = (
+				7ADC04DD23732B660075FA26 /* v2ray-core */,
 				66F3029922AA9C0900FCA4E2 /* V2rayUTool */,
 				664FC05321A70C4300048FE3 /* build.plist */,
 				66FEAD45217D75FC009DECF9 /* release.sh */,
@@ -551,6 +554,7 @@
 				6D6DFEA4ED44E1BE02451B6D /* PreferenceAbout.xib in Resources */,
 				6D6DF95B4749491F1D600B05 /* PreferenceAdvance.xib in Resources */,
 				6D6DFC1618D163A9DFE3B628 /* PreferenceGeneral.xib in Resources */,
+				7ADC04DE23732B660075FA26 /* v2ray-core in Resources */,
 				6D6DFFD18860EBE148F6DF1F /* PreferencePac.xib in Resources */,
 				6D6DF51271B1AF55EACC79F2 /* PreferenceSubscribe.xib in Resources */,
 				6D6DF248002D7FF027DCC255 /* test.sh in Resources */,
