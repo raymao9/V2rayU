@@ -109,8 +109,8 @@ class MenuController: NSObject, NSMenuDelegate {
     }
 
     func setStatusOff() {
-        v2rayStatusItem.title = "V2ray: Off"
-        toggleV2rayItem.title = "Turn V2ray On"
+        v2rayStatusItem.title = "v2ray-core: Off" + ("  (v" + appVersion + ")")
+        toggleV2rayItem.title = "Turn v2ray-core On"
 
         if let button = statusItem.button {
             button.image = NSImage(named: NSImage.Name("IconOff"))
@@ -120,12 +120,25 @@ class MenuController: NSObject, NSMenuDelegate {
         UserDefaults.setBool(forKey: .v2rayTurnOn, value: false)
     }
 
-    func setStatusOn() {
-        v2rayStatusItem.title = "V2ray: On"
-        toggleV2rayItem.title = "Turn V2ray Off"
+    func setStatusOn(runMode: RunMode) {
+        v2rayStatusItem.title = "v2ray-core: On" + ("  (v" + appVersion + ")")
+        toggleV2rayItem.title = "Turn v2ray-core Off"
 
+        var iconName = "IconOn"
+        
+        switch runMode {
+        case .global:
+            iconName = "IconOnG"
+        case .manual:
+            iconName = "IconOnM"
+        case .pac:
+            iconName = "IconOnP"
+        default:
+            break
+        }
+        
         if let button = statusItem.button {
-            button.image = NSImage(named: NSImage.Name("IconOn"))
+            button.image = NSImage(named: NSImage.Name(iconName))
         }
 
         // set on
@@ -156,18 +169,19 @@ class MenuController: NSObject, NSMenuDelegate {
             setStatusOff()
             return
         }
-
+        
+        let runMode = RunMode(rawValue: UserDefaults.get(forKey: .runMode) ?? "manual") ?? .manual
+        
         // create json file
         V2rayConfig.createJsonFile(item: v2ray)
 
         // set status
-        setStatusOn()
+        setStatusOn(runMode: runMode)
 
         // launch
         V2rayLaunch.Start()
         NSLog("start v2ray-core done.")
 
-        let runMode = RunMode(rawValue: UserDefaults.get(forKey: .runMode) ?? "manual") ?? .manual
         // switch run mode
         self.switchRunMode(runMode: runMode)
     }
@@ -273,7 +287,7 @@ class MenuController: NSObject, NSMenuDelegate {
     }
 
     @IBAction func goHelp(_ sender: NSMenuItem) {
-        guard let url = URL(string: "https://avalyuan.me/knowledgebase.php") else {
+        guard let url = URL(string: "https://github.com/yanue/v2rayu/wiki") else {
             return
         }
         NSWorkspace.shared.open(url)
@@ -292,7 +306,7 @@ class MenuController: NSObject, NSMenuDelegate {
             }
 
             let menuItem: NSMenuItem = NSMenuItem()
-            menuItem.title = item.remark
+            menuItem.title = String(item.speed) + "ms\t    " + item.remark
             menuItem.action = #selector(self.switchServer(_:))
             menuItem.representedObject = item
             menuItem.target = self
@@ -352,7 +366,10 @@ class MenuController: NSObject, NSMenuDelegate {
             sockPort = cfg.socksPort
             httpPort = cfg.httpPort
         }
-
+        
+        // set icon
+        setStatusOn(runMode: runMode)
+        
         // manual mode
         if lastRunMode == RunMode.manual.rawValue {
             // backup first
@@ -368,7 +385,7 @@ class MenuController: NSObject, NSMenuDelegate {
         // pac mode
         if runMode == .pac {
             // generate pac file
-            _ = GeneratePACFile()
+            _ = GeneratePACFile(rewrite: false)
         }
 
         V2rayLaunch.setSystemProxy(mode: runMode)
@@ -439,25 +456,51 @@ class MenuController: NSObject, NSMenuDelegate {
         }
     }
 
+    @IBAction func pingSpeed(_ sender: NSMenuItem) {
+        let itemList = V2rayServer.list()
+        if itemList.count == 0 {
+            return
+        }
+
+        for item in itemList {
+            if !item.isValid {
+                continue
+            }
+            
+            let ping = Ping(item: item)
+            ping.pingProxySpeed()
+        }
+
+        V2rayServer.saveItemList()
+        // refresh server
+        self.showServers()
+    }
+
     func importUri(url: String) {
-        let uri = url.trimmingCharacters(in: .whitespaces)
+        let urls = url.split(separator: "\n")
+        
+        for url in urls {
+            let uri = url.trimmingCharacters(in: .whitespaces)
 
-        if uri.count == 0 {
-            noticeTip(title: "import server fail", subtitle: "", informativeText: "import error: uri not found")
-            return
-        }
+            if uri.count == 0 {
+                noticeTip(title: "import server fail", subtitle: "", informativeText: "import error: uri not found")
+                continue
+            }
 
-        if URL(string: uri) == nil {
+            // ss://YWVzLTI1Ni1jZmI6ZUlXMERuazY5NDU0ZTZuU3d1c3B2OURtUzIwMXRRMERAMTcyLjEwNS43MS44Mjo4MDk5#翻墙党325.06美国 类型这种含中文的格式不是标准的URL格式
+//            if URL(string: uri) == nil {
+            if !ImportUri.supportProtocol(uri: uri) {
+                noticeTip(title: "import server fail", subtitle: "", informativeText: "no found ss:// , ssr:// or vmess://")
+                continue
+            }
+
+            if let importUri = ImportUri.importUri(uri: uri) {
+                self.saveServer(importUri: importUri)
+                continue
+            }
+
             noticeTip(title: "import server fail", subtitle: "", informativeText: "no found ss:// , ssr:// or vmess://")
-            return
         }
-
-        if let importUri = ImportUri.importUri(uri: uri) {
-            self.saveServer(importUri: importUri)
-            return
-        }
-
-        noticeTip(title: "import server fail", subtitle: "", informativeText: "no found ss:// , ssr:// or vmess://")
     }
 
     func saveServer(importUri: ImportUri) {

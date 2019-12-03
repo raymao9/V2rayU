@@ -12,7 +12,7 @@ import ServiceManagement
 
 final class PreferenceGeneralViewController: NSViewController, PreferencePane {
     let preferencePaneIdentifier = PreferencePane.Identifier.generalTab
-    let preferencePaneTitle = "一般"
+    let preferencePaneTitle = "General"
     let toolbarItemIcon = NSImage(named: NSImage.preferencesGeneralName)!
 
     override var nibName: NSNib.Name? {
@@ -56,7 +56,7 @@ final class PreferenceGeneralViewController: NSViewController, PreferencePane {
     }
     
     @IBAction func goFeedback(_ sender: NSButton) {
-        guard let url = URL(string: "https://avalyuan.me/submitticket.php") else {
+        guard let url = URL(string: "https://github.com/yanue/v2rayu/issues") else {
             return
         }
         NSWorkspace.shared.open(url)

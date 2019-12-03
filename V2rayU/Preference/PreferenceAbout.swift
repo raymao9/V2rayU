@@ -11,7 +11,7 @@ import Preferences
 
 final class PreferenceAboutViewController: NSViewController, PreferencePane {
     let preferencePaneIdentifier = PreferencePane.Identifier.aboutTab
-    let preferencePaneTitle = "關於"
+    let preferencePaneTitle = "About"
     let toolbarItemIcon = NSImage(named: NSImage.infoName)!
     
     @IBOutlet weak var VersionLabel: NSTextField!
@@ -26,10 +26,8 @@ final class PreferenceAboutViewController: NSViewController, PreferencePane {
         // fix: https://github.com/sindresorhus/Preferences/issues/31
         self.preferredContentSize = NSMakeSize(self.view.frame.size.width, self.view.frame.size.height);
         
-        if let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] {
-            self.VersionLabel.stringValue = "Version " + (version as? String ?? "1.0")
-        }
-        
+        self.VersionLabel.stringValue = "Version " + appVersion
+
         if let v2rayCoreVersion = UserDefaults.get(forKey: .v2rayCoreVersion) {
             self.V2rayCoreVersion.stringValue = "based on v2ray-core " + v2rayCoreVersion
         }

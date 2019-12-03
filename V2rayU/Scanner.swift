@@ -126,7 +126,7 @@ class ImportUri {
     var error: String = ""
     var uri: String = ""
 
-    static func importUri(uri: String, checkExist: Bool = true) -> ImportUri? {
+    static func importUri(uri: String, id: String = "", checkExist: Bool = true) -> ImportUri? {
         if checkExist && V2rayServer.exist(url: uri) {
             let importUri = ImportUri()
             importUri.isValid = false
@@ -136,7 +136,7 @@ class ImportUri {
 
         if uri.hasPrefix("vmess://") {
             let importUri = ImportUri()
-            importUri.importVmessUri(uri: uri)
+            importUri.importVmessUri(uri: uri, id: id)
             return importUri
         } else if uri.hasPrefix("ss://") {
             let importUri = ImportUri()
@@ -158,21 +158,30 @@ class ImportUri {
     }
 
     func importSSUri(uri: String) {
-        if URL(string: uri) == nil {
-            self.error = "invalid ss url"
-            return
+        var url = URL(string: uri)
+        if url == nil {
+            let aUri = uri.split(separator: "#")
+            url = URL(string: String(aUri[0]))
+            if url == nil {
+                self.error = "invalid ss url"
+                return
+            }
+            // 支持 ss://YWVzLTI1Ni1jZmI6ZjU1LmZ1bi0wNTM1NDAxNkA0NS43OS4xODAuMTExOjExMDc4#翻墙党300.16美国 格式
+            self.remark = String(aUri[1])
         }
 
         self.uri = uri
 
         let ss = ShadowsockUri()
-        ss.Init(url: URL(string: uri)!)
+        ss.Init(url: url!)
         if ss.error.count > 0 {
             self.error = ss.error
             self.isValid = false
             return
         }
-        self.remark = ss.remark
+        if ss.remark.count > 0 {
+            self.remark = ss.remark
+        }
 
         let v2ray = V2rayConfig()
         var ssServer = V2rayOutboundShadowsockServer()
@@ -230,7 +239,7 @@ class ImportUri {
         }
     }
 
-    func importVmessUri(uri: String) {
+    func importVmessUri(uri: String, id: String = "") {
         if URL(string: uri) == nil {
             self.error = "invalid vmess url"
             return
@@ -258,6 +267,9 @@ class ImportUri {
         vmessItem.address = vmess.address
         vmessItem.port = vmess.port
         var user = V2rayOutboundVMessUser()
+        if id.count > 0 {
+//            vmess.id = id
+        }
         user.id = vmess.id
         user.alterId = vmess.alterId
         user.security = vmess.security
@@ -358,7 +370,7 @@ class VmessUri {
             self.error = "error decode Str"
             return
         }
-
+        print("decodeStr", decodeStr)
         // main
         var uuid_ = ""
         var host_ = ""
@@ -379,6 +391,7 @@ class VmessUri {
             self.address = host_port[0]
             self.port = Int(host_port[1]) ?? 0
         }
+        print("VmessUri self",self)
 
         // params
         let params = paramsStr.components(separatedBy: "&")
@@ -419,7 +432,7 @@ class VmessUri {
                 self.downlinkCapacity = Int(param[1]) ?? 20
                 break
             case "remark":
-                self.remark = param[1]
+                self.remark = param[1].urlDecoded()
                 break
             default:
                 break
@@ -517,7 +530,7 @@ class ShadowsockUri {
             self.error = "error: decodeUrl"
             return
         }
-        guard var parsedUrl = URLComponents(string: decodedUrl) else {
+        guard let parsedUrl = URLComponents(string: decodedUrl) else {
             self.error = "error: parsedUrl"
             return
         }

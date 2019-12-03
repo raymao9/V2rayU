@@ -10,6 +10,7 @@ import Cocoa
 import ServiceManagement
 
 let launcherAppIdentifier = "net.yanue.V2rayU.Launcher"
+let appVersion = getAppVersion()
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -19,13 +20,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
-        // Insert code here to initialize your application        
-        let startedAtLogin = NSWorkspace.shared.runningApplications.contains {
-            $0.bundleIdentifier == launcherAppIdentifier
-        }
+        // auto launch
+        if UserDefaults.getBool(forKey: .autoLaunch) {
+            // Insert code here to initialize your application
+            let startedAtLogin = NSWorkspace.shared.runningApplications.contains {
+                $0.bundleIdentifier == launcherAppIdentifier
+            }
 
-        if startedAtLogin {
-            DistributedNotificationCenter.default().post(name: Notification.Name("terminateV2rayU"), object: Bundle.main.bundleIdentifier!)
+            if startedAtLogin {
+                DistributedNotificationCenter.default().post(name: Notification.Name("terminateV2rayU"), object: Bundle.main.bundleIdentifier!)
+            }
         }
 
         self.checkDefault()
@@ -55,11 +59,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             UserDefaults.set(forKey: .v2rayCoreVersion, value: V2rayCore.version)
         }
         if UserDefaults.get(forKey: .autoCheckVersion) == nil {
-            UserDefaults.setBool(forKey: .v2rayCoreVersion, value: true)
+            UserDefaults.setBool(forKey: .autoCheckVersion, value: true)
         }
         if UserDefaults.get(forKey: .autoLaunch) == nil {
             SMLoginItemSetEnabled(launcherAppIdentifier as CFString, true)
-            UserDefaults.setBool(forKey: .v2rayCoreVersion, value: true)
+            UserDefaults.setBool(forKey: .autoLaunch, value: true)
         }
         if UserDefaults.get(forKey: .runMode) == nil {
             UserDefaults.set(forKey: .runMode, value: RunMode.manual.rawValue)

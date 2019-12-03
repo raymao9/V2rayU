@@ -8,7 +8,7 @@
 source ./release.sh
 
 
-read -p "請輸入版本描述： " release_note
+read -p "請輸入版本描述: " release_note
 pushRelease ${release_note}
 generateAppcast ${release_note}
 commit

@@ -31,10 +31,10 @@
         </customObject>
         <menu title="V2rayU" id="9n3-TW-9ur" userLabel="stateMenu">
             <items>
-                <menuItem title="V2ray: On" enabled="NO" id="P34-uO-Vwf">
+                <menuItem title="V2ray-Core: On" enabled="NO" id="P34-uO-Vwf">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="Turn V2ray Off" id="SML-EF-rdT" userLabel="Turn v2ray-core On">
+                <menuItem title="Turn v2ray-core Off" id="SML-EF-rdT" userLabel="Turn v2ray-core On">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="start:" target="hcZ-V7-Dui" id="XIR-lL-vV2"/>
@@ -80,6 +80,12 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="openPreferencePac:" target="hcZ-V7-Dui" id="q2a-9U-SCe"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Ping Speed..." id="Ow7-xo-xhV">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="pingSpeed:" target="hcZ-V7-Dui" id="S0e-Q3-a8R"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="4r0-fk-xMy"/>
@@ -141,7 +147,7 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="-553" y="42"/>
+            <point key="canvasLocation" x="-553" y="52"/>
         </menu>
         <menu title="V2rayU" systemMenu="main" id="hzc-Fw-ODy">
             <items>
@@ -365,6 +371,7 @@
                     </menu>
                 </menuItem>
             </items>
+            <point key="canvasLocation" x="-502" y="336"/>
         </menu>
     </objects>
 </document>

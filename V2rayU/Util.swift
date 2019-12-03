@@ -37,8 +37,12 @@ extension UserDefaults {
         case gfwPacListUrl
 
         // base settings
+        // http host
+        case localHttpHost
         // http port
         case localHttpPort
+        // sock host
+        case localSockHost
         // sock port
         case localSockPort
         // dns servers
@@ -122,6 +126,18 @@ extension String {
         let urlTest = NSPredicate(format: "SELF MATCHES %@", urlRegEx)
         let result = urlTest.evaluate(with: self)
         return result
+    }
+
+    //将原始的url编码为合法的url
+    func urlEncoded() -> String {
+        let encodeUrlString = self.addingPercentEncoding(withAllowedCharacters:
+        .urlQueryAllowed)
+        return encodeUrlString ?? self
+    }
+
+    //将编码后的url转换回原始的url
+    func urlDecoded() -> String {
+        return self.removingPercentEncoding ?? self
     }
 }
 
@@ -250,4 +266,8 @@ func releaseTcpPort(socket: Int32) {
 
 func descriptionOfLastError() -> String {
     return String.init(cString: (UnsafePointer(strerror(errno))))
+}
+
+func getAppVersion() -> String {
+    return "\(Bundle.main.infoDictionary!["CFBundleShortVersionString"] ?? "")"
 }

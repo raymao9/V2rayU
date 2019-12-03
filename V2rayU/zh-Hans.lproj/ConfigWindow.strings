@@ -9,7 +9,7 @@
 "0xi-jg-IkE.title" = "取消";
 
 /* Class = "NSTextFieldCell"; title = "please go to the \"import\" tab to edit manually."; ObjectID = "1In-OS-o1g"; */
-"1In-OS-o1g.title" = "请切换到 “导入节点” 分页手动编辑";
+"1In-OS-o1g.title" = "请切换到'导入模式'栏进行手动编辑.";
 
 /* Class = "NSTextFieldCell"; title = "readBufferSize"; ObjectID = "1bK-F6-yGg"; */
 "1bK-F6-yGg.title" = "readBufferSize";
@@ -78,7 +78,7 @@
 "AhD-2F-okN.title" = "srtp";
 
 /* Class = "NSTabViewItem"; label = "Import"; ObjectID = "BS9-X1-ueN"; */
-"BS9-X1-ueN.label" = "导入节点";
+"BS9-X1-ueN.label" = "导入模式";
 
 /* Class = "NSMenuItem"; title = "file"; ObjectID = "Cj0-4e-gUx"; */
 "Cj0-4e-gUx.title" = "file";
@@ -99,7 +99,7 @@
 "GBr-yR-BZv.title" = "downlinkCapacity";
 
 /* Class = "NSButtonCell"; title = "subscribe"; ObjectID = "H9t-q7-Sop"; */
-"H9t-q7-Sop.title" = "节点订阅设置";
+"H9t-q7-Sop.title" = "订阅设置";
 
 /* Class = "NSTextFieldCell"; title = "response:"; ObjectID = "HMZ-z3-aYN"; */
 "HMZ-z3-aYN.title" = "response:";
@@ -141,10 +141,10 @@
 "OPO-30-fBA.title" = "dtls";
 
 /* Class = "NSTextFieldCell"; title = "please go to the \"import\" tab to edit manually."; ObjectID = "OPq-km-B7m"; */
-"OPq-km-B7m.title" = "请切换到 “导入节点” 分页手动编辑";
+"OPq-km-B7m.title" = "请切换到'导入模式'栏进行手动编辑.";
 
 /* Class = "NSButtonCell"; title = "show log"; ObjectID = "OQK-lm-eg7"; */
-"OQK-lm-eg7.title" = "查看日志";
+"OQK-lm-eg7.title" = "显示日志";
 
 /* Class = "NSTextFieldCell"; title = "Base Settings"; ObjectID = "PYw-vm-Rfw"; */
 "PYw-vm-Rfw.title" = "基础设置";
@@ -198,7 +198,7 @@
 "a2I-6n-wib.title" = "aes-128-gcm";
 
 /* Class = "NSButtonCell"; title = "above 4.0"; ObjectID = "a6s-FY-a2J"; */
-"a6s-FY-a2J.title" = "4.0+";
+"a6s-FY-a2J.title" = "4.0以上版本";
 
 /* Class = "NSMenuItem"; title = "chacha20-poly1305"; ObjectID = "aU5-Cf-sxB"; */
 "aU5-Cf-sxB.title" = "chacha20-poly1305";
@@ -246,7 +246,7 @@
 "fkC-Lg-nTb.title" = "aes-256-cfb";
 
 /* Class = "NSTextFieldCell"; title = "Sock Port"; ObjectID = "hAL-aX-7Ga"; */
-"hAL-aX-7Ga.title" = "Socks 端口";
+"hAL-aX-7Ga.title" = "Sock端口";
 
 /* Class = "NSMenuItem"; title = "utp"; ObjectID = "hAO-vb-BxU"; */
 "hAO-vb-BxU.title" = "utp";
@@ -327,7 +327,7 @@
 "rhe-ca-hiN.title" = "host:";
 
 /* Class = "NSTextFieldCell"; title = "inbound.port wil be useless."; ObjectID = "rrK-9J-csE"; */
-"rrK-9J-csE.title" = "inbound.port 将会无用";
+"rrK-9J-csE.title" = "inbound.port将会无用";
 
 /* Class = "NSButtonCell"; title = "Select File"; ObjectID = "sLd-Q8-L1f"; */
 "sLd-Q8-L1f.title" = "选择文件";
@@ -354,13 +354,13 @@
 "vPW-Ad-9zp.title" = "aes-128-cfb";
 
 /* Class = "NSTextFieldCell"; title = "Version "; ObjectID = "vhp-WG-z79"; */
-"vhp-WG-z79.title" = "Core";
+"vhp-WG-z79.title" = "v2ray版本";
 
 /* Class = "NSMenuItem"; title = "wireguard"; ObjectID = "wJ6-w5-BFy"; */
 "wJ6-w5-BFy.title" = "wireguard";
 
 /* Class = "NSTextFieldCell"; title = "Http Port"; ObjectID = "x5e-89-s7I"; */
-"x5e-89-s7I.title" = "HTTP 端口";
+"x5e-89-s7I.title" = "Http端口";
 
 /* Class = "NSMenuItem"; title = "domainsocket"; ObjectID = "xGT-Gg-PB5"; */
 "xGT-Gg-PB5.title" = "domainsocket";

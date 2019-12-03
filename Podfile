@@ -12,9 +12,12 @@ target 'V2rayU' do
   pod 'SwiftyJSON'
   # master branch
   pod 'Preferences', :git => 'https://github.com/sindresorhus/Preferences.git'
-  pod 'Sparkle', '~> 1.22.0'
+  pod 'Sparkle'
   pod 'QRCoder'
-  pod "GCDWebServer", '~> 3.5.2'
-  project 'V2rayU.xcodeproj'
-  
+  pod "GCDWebServer"
+#  pod 'Socket.IO-Client-Swift'
+#  pod 'SwiftSocket'
+  pod 'SwiftSocket', :git => 'https://github.com/odariusgeorge/SwiftSocket.git', :branch => 'patch-1'
+ project 'V2rayU.xcodeproj'
+
 end

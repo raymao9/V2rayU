@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15400" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15400"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -32,6 +32,7 @@
                 </button>
                 <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UJB-Wh-dgF">
                     <rect key="frame" x="59" y="194" width="216" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
                         <button horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tgw-Vy-D08" userLabel="Check for Updates automutically">
                             <rect key="frame" x="-2" y="-2" width="220" height="18"/>
@@ -52,9 +53,9 @@
                     </customSpacing>
                 </stackView>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SUN-rQ-2fp">
-                    <rect key="frame" x="160" y="117" width="72" height="17"/>
+                    <rect key="frame" x="162" y="117" width="67" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="inline" title="Clear Logs" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="2vr-uU-fMI">
+                    <buttonCell key="cell" type="inline" title="clear logs" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="2vr-uU-fMI">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="smallSystemBold"/>
                     </buttonCell>
@@ -63,9 +64,9 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FpH-fQ-KqG">
-                    <rect key="frame" x="76" y="116" width="76" height="19"/>
+                    <rect key="frame" x="78" y="116" width="71" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="roundRect" title="Show Logs" bezelStyle="roundedRect" alignment="center" borderStyle="border" inset="2" id="0fD-xL-Tly">
+                    <buttonCell key="cell" type="roundRect" title="show logs" bezelStyle="roundedRect" alignment="center" borderStyle="border" inset="2" id="0fD-xL-Tly">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="cellTitle"/>
                     </buttonCell>
@@ -75,6 +76,7 @@
                 </button>
                 <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WJk-22-Sun">
                     <rect key="frame" x="59" y="143" width="231" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <subviews>
                         <button horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="59o-dL-xSh" userLabel="Check for Updates automutically">
                             <rect key="frame" x="-2" y="-2" width="235" height="18"/>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15400" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15400"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14490.70"/>
         <capability name="System colors introduced in macOS 10.14" minToolsVersion="10.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -81,7 +81,7 @@
         <window title="V2rayU" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" fullSizeContentView="YES"/>
             <rect key="contentRect" x="196" y="240" width="597" height="566"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1280" height="777"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="597" height="566"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -102,7 +102,7 @@
                                     <tableColumns>
                                         <tableColumn identifier="remark" width="128" minWidth="40" maxWidth="1000" id="2RG-jZ-YZ5">
                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                <font key="font" metaFont="smallSystem"/>
+                                                <font key="font" metaFont="controlContent" size="11"/>
                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                             </tableHeaderCell>
@@ -221,7 +221,7 @@ Gw
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                         <popUpButtonCell key="cell" type="push" title="url" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="oGz-AN-skf" id="UsQ-Yu-Jde" userLabel="SwitchUri">
                                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                            <font key="font" metaFont="menu"/>
+                                                            <font key="font" metaFont="system"/>
                                                             <menu key="menu" id="pmp-wC-xlJ">
                                                                 <items>
                                                                     <menuItem title="url" state="on" id="oGz-AN-skf">
@@ -246,15 +246,15 @@ Gw
                                             <rect key="frame" x="8" y="8" width="377" height="428"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <clipView key="contentView" ambiguous="YES" id="0rS-HW-TeI">
-                                                <rect key="frame" x="1" y="1" width="360" height="426"/>
+                                                <rect key="frame" x="1" y="1" width="375" height="426"/>
                                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 <subviews>
                                                     <textView ambiguous="YES" importsGraphics="NO" richText="NO" verticallyResizable="YES" selectionGranularity="word" allowsUndo="YES" allowsNonContiguousLayout="YES" textCompletion="NO" smartInsertDelete="YES" id="dNK-7u-GUm">
-                                                        <rect key="frame" x="0.0" y="0.0" width="364" height="426"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="379" height="426"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="alternatingContentBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                        <size key="minSize" width="360" height="426"/>
+                                                        <size key="minSize" width="375" height="426"/>
                                                         <size key="maxSize" width="400" height="10000000"/>
                                                         <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
                                                     </textView>
@@ -266,7 +266,7 @@ Gw
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                             <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="PcW-ea-yMr">
-                                                <rect key="frame" x="361" y="1" width="15" height="426"/>
+                                                <rect key="frame" x="360" y="1" width="16" height="426"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                             </scroller>
                                         </scrollView>
@@ -301,7 +301,7 @@ Gw
                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XTA-EL-w5I">
                                                                 <rect key="frame" x="164" y="50" width="62" height="14"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="HTTP Port" id="x5e-89-s7I">
+                                                                <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Http Port" id="x5e-89-s7I">
                                                                     <font key="font" metaFont="message" size="11"/>
                                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -329,7 +329,7 @@ Gw
                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" allowsCharacterPickerTouchBarItem="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YQW-II-5yq">
                                                                 <rect key="frame" x="18" y="48" width="64" height="14"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Socks Port" id="hAL-aX-7Ga">
+                                                                <textFieldCell key="cell" controlSize="small" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Sock Port" id="hAL-aX-7Ga">
                                                                     <font key="font" metaFont="message" size="11"/>
                                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -347,7 +347,7 @@ Gw
                                                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TeX-0Y-mTO">
                                                                 <rect key="frame" x="79" y="3" width="74" height="20"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                <buttonCell key="cell" type="check" title="4.0+" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="a6s-FY-a2J">
+                                                                <buttonCell key="cell" type="check" title="above 4.0" bezelStyle="regularSquare" imagePosition="left" controlSize="small" state="on" inset="2" id="a6s-FY-a2J">
                                                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                     <font key="font" metaFont="message" size="11"/>
                                                                 </buttonCell>
@@ -384,9 +384,9 @@ Gw
                                                                 </connections>
                                                             </button>
                                                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yO9-ma-EEI">
-                                                                <rect key="frame" x="305" y="47" width="46" height="20"/>
+                                                                <rect key="frame" x="305" y="47" width="45" height="20"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                                <buttonCell key="cell" type="check" title="UDP" bezelStyle="regularSquare" imagePosition="left" controlSize="small" enabled="NO" state="on" inset="2" id="2V8-SA-uUd">
+                                                                <buttonCell key="cell" type="check" title="Udp" bezelStyle="regularSquare" imagePosition="left" controlSize="small" enabled="NO" state="on" inset="2" id="2V8-SA-uUd">
                                                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                                                     <font key="font" metaFont="message" size="11"/>
                                                                 </buttonCell>
@@ -413,9 +413,9 @@ Gw
                                                     <color key="fillColor" name="windowBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                 </box>
                                                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3ke-TE-bPA">
-                                                    <rect key="frame" x="286" y="79" width="91" height="32"/>
+                                                    <rect key="frame" x="287" y="79" width="89" height="32"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                                    <buttonCell key="cell" type="push" title="Settings" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ShP-eu-gQk">
+                                                    <buttonCell key="cell" type="push" title="settings" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="ShP-eu-gQk">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
@@ -452,7 +452,7 @@ Gw
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <popUpButtonCell key="cell" type="push" title="vmess" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="FFz-kp-3QZ" id="gPp-Kb-B0H">
                                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" metaFont="menu"/>
+                                                        <font key="font" metaFont="system"/>
                                                         <menu key="menu" id="XIG-wh-yI5">
                                                             <items>
                                                                 <menuItem title="vmess" state="on" id="FFz-kp-3QZ">
@@ -591,7 +591,7 @@ Gw
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                         <popUpButtonCell key="cell" type="push" title="auto" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="hCD-ZD-xad" id="Ikf-53-LUn">
                                                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                                            <font key="font" metaFont="menu"/>
+                                                                            <font key="font" metaFont="system"/>
                                                                             <menu key="menu" id="WhF-NB-ypf">
                                                                                 <items>
                                                                                     <menuItem title="auto" state="on" id="hCD-ZD-xad">
@@ -680,7 +680,7 @@ Gw
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                         <popUpButtonCell key="cell" type="push" title="aes-256-cfb" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="fkC-Lg-nTb" id="uc0-xt-2lH">
                                                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                                            <font key="font" metaFont="menu"/>
+                                                                            <font key="font" metaFont="system"/>
                                                                             <menu key="menu" id="tUl-7y-zcw">
                                                                                 <items>
                                                                                     <menuItem title="aes-256-cfb" state="on" id="fkC-Lg-nTb">
@@ -879,7 +879,7 @@ Gw
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                             <popUpButtonCell key="cell" type="push" title="none" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="F6t-3e-ppZ" id="vdQ-6h-Tw7">
                                                                 <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                                <font key="font" metaFont="menu"/>
+                                                                <font key="font" metaFont="system"/>
                                                                 <menu key="menu" id="skj-Dd-X2a">
                                                                     <items>
                                                                         <menuItem title="none" state="on" id="F6t-3e-ppZ">
@@ -936,7 +936,7 @@ Gw
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                         <popUpButtonCell key="cell" type="push" title="none" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Mg8-IY-rzv" id="ETG-0J-jI6">
                                                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                                            <font key="font" metaFont="menu"/>
+                                                                            <font key="font" metaFont="system"/>
                                                                             <menu key="menu" id="PRp-3a-GHQ">
                                                                                 <items>
                                                                                     <menuItem title="none" state="on" id="Mg8-IY-rzv">
@@ -1356,7 +1356,7 @@ Gw
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                         <popUpButtonCell key="cell" type="push" title="none" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="Qdu-v9-gR8" id="Otm-JP-KiH">
                                                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                                            <font key="font" metaFont="menu"/>
+                                                                            <font key="font" metaFont="system"/>
                                                                             <menu key="menu" id="R6u-2N-cUK">
                                                                                 <items>
                                                                                     <menuItem title="none" state="on" id="Qdu-v9-gR8">
@@ -1395,7 +1395,7 @@ Gw
                                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                                         <popUpButtonCell key="cell" type="push" title="none" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="9M6-6b-mvd" id="58h-T9-06h">
                                                                             <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                                            <font key="font" metaFont="menu"/>
+                                                                            <font key="font" metaFont="system"/>
                                                                             <menu key="menu" id="pQG-ZI-o2D">
                                                                                 <items>
                                                                                     <menuItem title="none" state="on" id="9M6-6b-mvd">
@@ -1455,7 +1455,7 @@ Gw
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                                     <popUpButtonCell key="cell" type="push" title="tcp" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="xQb-ln-txV" id="aIA-4d-4lU">
                                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                                        <font key="font" metaFont="menu"/>
+                                                        <font key="font" metaFont="system"/>
                                                         <menu key="menu" id="9jA-pc-0EN">
                                                             <items>
                                                                 <menuItem title="tcp" state="on" id="xQb-ln-txV">
@@ -1522,7 +1522,7 @@ Gw
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="z5Z-PF-svd">
                         <rect key="frame" x="17" y="129" width="150" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="Advance Settings" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bzw-de-71C">
+                        <buttonCell key="cell" type="push" title="advance settings" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bzw-de-71C">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -1531,20 +1531,20 @@ Gw
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yEL-bm-ZNR">
-                        <rect key="frame" x="54" y="64" width="75" height="19"/>
+                        <rect key="frame" x="60" y="64" width="61" height="19"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="roundRect" title="Clear Logs" bezelStyle="roundedRect" alignment="center" borderStyle="border" inset="2" id="ePD-L5-rbO">
+                        <buttonCell key="cell" type="roundRect" title="clear log" bezelStyle="roundedRect" alignment="center" borderStyle="border" inset="2" id="ePD-L5-rbO">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                            <font key="font" metaFont="cellTitle"/>
+                            <font key="font" metaFont="label" size="12"/>
                         </buttonCell>
                         <connections>
                             <action selector="clearLogs:" target="-2" id="Xic-9w-hg4"/>
                         </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="76o-eU-kIf">
-                        <rect key="frame" x="55" y="96" width="73" height="17"/>
+                        <rect key="frame" x="60" y="96" width="62" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="inline" title="Show Logs" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="OQK-lm-eg7">
+                        <buttonCell key="cell" type="inline" title="show log" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="OQK-lm-eg7">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="smallSystemBold"/>
                         </buttonCell>
@@ -1555,7 +1555,7 @@ Gw
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VE0-0F-NoI">
                         <rect key="frame" x="17" y="157" width="150" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="push" title="Subscribe" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="H9t-q7-Sop">
+                        <buttonCell key="cell" type="push" title="subscribe" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="H9t-q7-Sop">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                             <string key="keyEquivalent">s</string>
