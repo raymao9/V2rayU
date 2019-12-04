@@ -3,7 +3,7 @@
 "12u-HY-IPV.title" = "error";
 
 /* Class = "NSTextFieldCell"; title = "V2ray Core Log level:"; ObjectID = "Ctq-lX-cuA"; */
-"Ctq-lX-cuA.title" = "日誌記錄等級";
+"Ctq-lX-cuA.title" = "日誌記錄等級:";
 
 /* Class = "NSTextFieldCell"; placeholderString = " 1087"; ObjectID = "U2E-Gk-3e0"; */
 "U2E-Gk-3e0.placeholderString" = " 1087";
@@ -12,16 +12,16 @@
 "YJf-A4-mgF.title" = "儲存設定";
 
 /* Class = "NSTextFieldCell"; title = "Local Http Listen Port:"; ObjectID = "Yih-X2-qBl"; */
-"Yih-X2-qBl.title" = "本機 HTTP 監聽端口";
+"Yih-X2-qBl.title" = "本機 HTTP 監聽端口:";
 
 /* Class = "NSButtonCell"; title = "Enable UDP"; ObjectID = "afR-MR-aoQ"; */
 "afR-MR-aoQ.title" = "啟用 UDP";
 
 /* Class = "NSTextFieldCell"; title = "Mux:"; ObjectID = "aux-FG-ubc"; */
-"aux-FG-ubc.title" = "Mux";
+"aux-FG-ubc.title" = "Mux:";
 
 /* Class = "NSTextFieldCell"; title = "Dns:"; ObjectID = "c7W-6e-soa"; */
-"c7W-6e-soa.title" = "DNS";
+"c7W-6e-soa.title" = "DNS:";
 
 /* Class = "NSTextFieldCell"; placeholderString = " 1080"; ObjectID = "cEB-VU-kcL"; */
 "cEB-VU-kcL.placeholderString" = " 1080";
@@ -54,7 +54,7 @@
 "tMz-nM-arv.title" = "本機";
 
 /* Class = "NSTextFieldCell"; title = "Pac Server Listen Port:"; ObjectID = "you-iw-OS5"; */
-"you-iw-OS5.title" = "Pac 監聽端口";
+"you-iw-OS5.title" = "Pac 監聽端口:";
 
 /* Class = "NSMenuItem"; title = "warning"; ObjectID = "z4S-wG-fyc"; */
 "z4S-wG-fyc.title" = "warning";

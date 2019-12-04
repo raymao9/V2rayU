@@ -9,12 +9,12 @@
 "2vr-uU-fMI.title" = "清除日志";
 
 /* Class = "NSButtonCell"; title = "Launch V2rayU at login"; ObjectID = "NZE-cI-j04"; */
-"NZE-cI-j04.title" = "开机自动启动";
+"NZE-cI-j04.title" = "开机自动启动 V2rayU";
 
 /* Class = "NSButtonCell"; title = "Feedback..."; ObjectID = "QjX-NH-23u"; */
 "QjX-NH-23u.title" = "问题反馈";
 
-/* Class = "NSButtonCell"; title = "Clear Logs  Everyday Automutically"; ObjectID = "hIN-yp-Qul"; */
+/* Class = "NSButtonCell"; title = "Clear Logs Everyday Automutically"; ObjectID = "hIN-yp-Qul"; */
 "hIN-yp-Qul.title" = "每天自动清除日志";
 
 /* Class = "NSButtonCell"; title = "Check for Updates automutically"; ObjectID = "m2S-Mu-rFM"; */

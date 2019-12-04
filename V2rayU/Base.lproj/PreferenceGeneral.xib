@@ -19,10 +19,9 @@
             <rect key="frame" x="0.0" y="0.0" width="460" height="280"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="87d-wY-Ocw">
-                    <rect key="frame" x="57" y="220" width="167" height="18"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="check" title="Launch V2rayU at Login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="NZE-cI-j04">
+                <button horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="87d-wY-Ocw">
+                    <rect key="frame" x="57" y="220" width="163" height="18"/>
+                    <buttonCell key="cell" type="check" title="Launch V2rayU at login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="NZE-cI-j04">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
                         <connections>
@@ -30,12 +29,12 @@
                         </connections>
                     </buttonCell>
                 </button>
-                <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UJB-Wh-dgF">
-                    <rect key="frame" x="59" y="194" width="218" height="14"/>
+                <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UJB-Wh-dgF">
+                    <rect key="frame" x="59" y="194" width="216" height="14"/>
                     <subviews>
                         <button horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tgw-Vy-D08" userLabel="Check for Updates automutically">
-                            <rect key="frame" x="-2" y="-2" width="222" height="18"/>
-                            <buttonCell key="cell" type="check" title="Check for Updates Automutically" bezelStyle="regularSquare" imagePosition="left" inset="2" id="m2S-Mu-rFM">
+                            <rect key="frame" x="-2" y="-2" width="220" height="18"/>
+                            <buttonCell key="cell" type="check" title="Check for Updates automutically" bezelStyle="regularSquare" imagePosition="left" inset="2" id="m2S-Mu-rFM">
                                 <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                 <font key="font" metaFont="system"/>
                                 <connections>
@@ -51,10 +50,9 @@
                         <real value="3.4028234663852886e+38"/>
                     </customSpacing>
                 </stackView>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SUN-rQ-2fp">
-                    <rect key="frame" x="164" y="117" width="65" height="17"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="inline" title="Clear Log" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="2vr-uU-fMI">
+                <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SUN-rQ-2fp">
+                    <rect key="frame" x="162" y="117" width="67" height="17"/>
+                    <buttonCell key="cell" type="inline" title="clear logs" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="2vr-uU-fMI">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="smallSystemBold"/>
                     </buttonCell>
@@ -62,10 +60,9 @@
                         <action selector="clearLogs:" target="-2" id="Hbj-bK-vtm"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FpH-fQ-KqG">
-                    <rect key="frame" x="79" y="116" width="70" height="19"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="roundRect" title="Show Log" bezelStyle="roundedRect" alignment="center" borderStyle="border" inset="2" id="0fD-xL-Tly">
+                <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FpH-fQ-KqG">
+                    <rect key="frame" x="78" y="116" width="71" height="19"/>
+                    <buttonCell key="cell" type="roundRect" title="show logs" bezelStyle="roundedRect" alignment="center" borderStyle="border" inset="2" id="0fD-xL-Tly">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="cellTitle"/>
                     </buttonCell>
@@ -73,7 +70,7 @@
                         <action selector="openLogs:" target="-2" id="ZHd-mS-hgK"/>
                     </connections>
                 </button>
-                <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" fixedFrame="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WJk-22-Sun">
+                <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" ambiguous="YES" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WJk-22-Sun">
                     <rect key="frame" x="59" y="143" width="231" height="14"/>
                     <subviews>
                         <button horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="59o-dL-xSh" userLabel="Check for Updates automutically">
@@ -94,10 +91,12 @@
                         <real value="3.4028234663852886e+38"/>
                     </customSpacing>
                 </stackView>
-                <button horizontalHuggingPriority="500" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPC-Na-pRr">
+                <button horizontalHuggingPriority="500" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cPC-Na-pRr">
                     <rect key="frame" x="72" y="43" width="182" height="32"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="push" title="Check for Updates" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2p9-GL-XZ9">
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="5ec-Aa-BdR"/>
+                    </constraints>
+                    <buttonCell key="cell" type="push" title="Check for Updates..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2p9-GL-XZ9">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -105,10 +104,12 @@
                         <action selector="checkVersion:" target="-2" id="4u0-Zb-Xfz"/>
                     </connections>
                 </button>
-                <button horizontalHuggingPriority="500" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="liJ-Uu-8HQ">
+                <button horizontalHuggingPriority="500" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="liJ-Uu-8HQ">
                     <rect key="frame" x="254" y="43" width="127" height="32"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="push" title="Feedback" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QjX-NH-23u">
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="115" id="DRP-bF-jeQ"/>
+                    </constraints>
+                    <buttonCell key="cell" type="push" title="Feedback..." bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QjX-NH-23u">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="system"/>
                     </buttonCell>
@@ -117,6 +118,22 @@
                     </connections>
                 </button>
             </subviews>
+            <constraints>
+                <constraint firstItem="FpH-fQ-KqG" firstAttribute="top" secondItem="WJk-22-Sun" secondAttribute="bottom" constant="8" symbolic="YES" id="7DR-Uf-JYo"/>
+                <constraint firstItem="UJB-Wh-dgF" firstAttribute="leading" secondItem="WJk-22-Sun" secondAttribute="leading" id="7QB-xU-Jfy"/>
+                <constraint firstItem="FpH-fQ-KqG" firstAttribute="baseline" relation="greaterThanOrEqual" secondItem="SUN-rQ-2fp" secondAttribute="baseline" id="8XJ-rp-0ZL"/>
+                <constraint firstItem="87d-wY-Ocw" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bXz-rK-jao" secondAttribute="leading" constant="59" id="Me8-Lf-f2S"/>
+                <constraint firstItem="SUN-rQ-2fp" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FpH-fQ-KqG" secondAttribute="trailing" constant="13" id="Nec-kN-y1I"/>
+                <constraint firstItem="FpH-fQ-KqG" firstAttribute="leading" secondItem="cPC-Na-pRr" secondAttribute="leading" id="OAc-hi-P4Q"/>
+                <constraint firstItem="FpH-fQ-KqG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bXz-rK-jao" secondAttribute="leading" constant="78" id="WWC-It-K8D"/>
+                <constraint firstItem="cPC-Na-pRr" firstAttribute="baseline" relation="greaterThanOrEqual" secondItem="liJ-Uu-8HQ" secondAttribute="baseline" id="cys-3a-KKH"/>
+                <constraint firstItem="87d-wY-Ocw" firstAttribute="top" relation="greaterThanOrEqual" secondItem="bXz-rK-jao" secondAttribute="top" constant="44" id="hl8-mF-BKy"/>
+                <constraint firstItem="UJB-Wh-dgF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="87d-wY-Ocw" secondAttribute="bottom" constant="14" id="krz-HZ-NJk"/>
+                <constraint firstItem="87d-wY-Ocw" firstAttribute="leading" secondItem="UJB-Wh-dgF" secondAttribute="leading" id="oDQ-G1-HYp"/>
+                <constraint firstItem="cPC-Na-pRr" firstAttribute="top" relation="greaterThanOrEqual" secondItem="FpH-fQ-KqG" secondAttribute="bottom" constant="46" id="owu-ks-TId"/>
+                <constraint firstItem="WJk-22-Sun" firstAttribute="top" secondItem="UJB-Wh-dgF" secondAttribute="bottom" constant="37" id="q7w-3w-wsO"/>
+                <constraint firstItem="liJ-Uu-8HQ" firstAttribute="leading" secondItem="cPC-Na-pRr" secondAttribute="trailing" constant="12" symbolic="YES" id="tdd-h9-h1V"/>
+            </constraints>
             <point key="canvasLocation" x="-144" y="-243"/>
         </view>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>

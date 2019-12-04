@@ -104,9 +104,9 @@
                             </textFieldCell>
                         </textField>
                         <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c8w-uA-Ajx">
-                            <rect key="frame" x="183" y="199" width="262" height="32"/>
+                            <rect key="frame" x="184" y="199" width="260" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            <buttonCell key="cell" type="push" title="Save and Update Pac From GFW List" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6OV-Jq-2Ue">
+                            <buttonCell key="cell" type="push" title="Save and Update Pac from GFW List" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6OV-Jq-2Ue">
                                 <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                 <font key="font" metaFont="system"/>
                             </buttonCell>

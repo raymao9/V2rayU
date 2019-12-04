@@ -14,7 +14,7 @@
 /* Class = "NSButtonCell"; title = "Feedback..."; ObjectID = "QjX-NH-23u"; */
 "QjX-NH-23u.title" = "技術支援";
 
-/* Class = "NSButtonCell"; title = "Clear Logs  Everyday Automutically"; ObjectID = "hIN-yp-Qul"; */
+/* Class = "NSButtonCell"; title = "Clear Logs Everyday Automutically"; ObjectID = "hIN-yp-Qul"; */
 "hIN-yp-Qul.title" = "清理日誌";
 
 /* Class = "NSButtonCell"; title = "Check for Updates automutically"; ObjectID = "m2S-Mu-rFM"; */

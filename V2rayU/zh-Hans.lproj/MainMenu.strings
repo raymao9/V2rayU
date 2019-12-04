@@ -21,7 +21,7 @@
 "3Hg-b3-phw.title" = "转换大写";
 
 /* Class = "NSMenuItem"; title = "Show Logs..."; ObjectID = "52m-v5-TzY"; */
-"52m-v5-TzY.title" = "查看 V2ray 日志";
+"52m-v5-TzY.title" = "查看日志";
 
 /* Class = "NSMenuItem"; title = "Smart Dashes"; ObjectID = "6aH-vb-Jom"; */
 "6aH-vb-Jom.title" = "智能破折号";
