@@ -11,7 +11,7 @@ import Preferences
 
 final class PreferenceAdvanceViewController: NSViewController, PreferencePane {
     let preferencePaneIdentifier = PreferencePane.Identifier.advanceTab
-    let preferencePaneTitle = "Advance"
+    let preferencePaneTitle = "進階"
     let toolbarItemIcon = NSImage(named: NSImage.advancedName)!
 
     @IBOutlet weak var saveBtn: NSButtonCell!

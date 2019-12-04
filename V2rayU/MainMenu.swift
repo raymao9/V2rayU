@@ -109,8 +109,8 @@ class MenuController: NSObject, NSMenuDelegate {
     }
 
     func setStatusOff() {
-        v2rayStatusItem.title = "v2ray-core: Off" + ("  (v" + appVersion + ")")
-        toggleV2rayItem.title = "Turn v2ray-core On"
+        v2rayStatusItem.title = "V2ray: Off" + ("  (v" + appVersion + ")")
+        toggleV2rayItem.title = "Turn V2ray On"
 
         if let button = statusItem.button {
             button.image = NSImage(named: NSImage.Name("IconOff"))
@@ -121,8 +121,8 @@ class MenuController: NSObject, NSMenuDelegate {
     }
 
     func setStatusOn(runMode: RunMode) {
-        v2rayStatusItem.title = "v2ray-core: On" + ("  (v" + appVersion + ")")
-        toggleV2rayItem.title = "Turn v2ray-core Off"
+        v2rayStatusItem.title = "V2ray: On" + ("  (v" + appVersion + ")")
+        toggleV2rayItem.title = "Turn V2ray Off"
 
         var iconName = "IconOn"
         
@@ -287,7 +287,7 @@ class MenuController: NSObject, NSMenuDelegate {
     }
 
     @IBAction func goHelp(_ sender: NSMenuItem) {
-        guard let url = URL(string: "https://github.com/yanue/v2rayu/wiki") else {
+        guard let url = URL(string: "https://avalyuan.me/knowledgebase.php") else {
             return
         }
         NSWorkspace.shared.open(url)

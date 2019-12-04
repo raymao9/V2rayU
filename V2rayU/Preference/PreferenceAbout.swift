@@ -11,7 +11,7 @@ import Preferences
 
 final class PreferenceAboutViewController: NSViewController, PreferencePane {
     let preferencePaneIdentifier = PreferencePane.Identifier.aboutTab
-    let preferencePaneTitle = "About"
+    let preferencePaneTitle = "關於　"
     let toolbarItemIcon = NSImage(named: NSImage.infoName)!
     
     @IBOutlet weak var VersionLabel: NSTextField!

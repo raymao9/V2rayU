@@ -20,7 +20,7 @@ let GFWListURL = "https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwli
 
 final class PreferencePacViewController: NSViewController, PreferencePane {
     let preferencePaneIdentifier = PreferencePane.Identifier.pacTab
-    let preferencePaneTitle = "Pac"
+    let preferencePaneTitle = "分流"
     let toolbarItemIcon = NSImage(named: NSImage.bookmarksTemplateName)!
 
     @IBOutlet weak var tips: NSTextField!
