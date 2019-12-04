@@ -52,9 +52,9 @@
                     </customSpacing>
                 </stackView>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SUN-rQ-2fp">
-                    <rect key="frame" x="160" y="117" width="72" height="17"/>
+                    <rect key="frame" x="164" y="117" width="65" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="inline" title="Clear Logs" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="2vr-uU-fMI">
+                    <buttonCell key="cell" type="inline" title="Clear Log" bezelStyle="inline" alignment="center" borderStyle="border" inset="2" id="2vr-uU-fMI">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="smallSystemBold"/>
                     </buttonCell>
@@ -63,9 +63,9 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FpH-fQ-KqG">
-                    <rect key="frame" x="76" y="116" width="76" height="19"/>
+                    <rect key="frame" x="79" y="116" width="70" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="roundRect" title="Show Logs" bezelStyle="roundedRect" alignment="center" borderStyle="border" inset="2" id="0fD-xL-Tly">
+                    <buttonCell key="cell" type="roundRect" title="Show Log" bezelStyle="roundedRect" alignment="center" borderStyle="border" inset="2" id="0fD-xL-Tly">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="cellTitle"/>
                     </buttonCell>

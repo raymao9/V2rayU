@@ -5,10 +5,7 @@
 /* Class = "NSTextFieldCell"; title = "based on v2ray-core v4.21.3"; ObjectID = "8bU-0Q-dTD"; */
 "8bU-0Q-dTD.title" = "based on v2ray-core v4.21.3";
 
-/* Class = "NSTextFieldCell"; title = "service@mail.avalyuan.com"; ObjectID = "Guc-nt-FeY"; */
-"Guc-nt-FeY.title" = "";
-
-/* Class = "NSTextFieldCell"; title = "https://www.avalyuan.com"; ObjectID = "Qby-y7-vli"; */
+/* Class = "NSTextFieldCell"; title = "avalyuan.com"; ObjectID = "Qby-y7-vli"; */
 "Qby-y7-vli.title" = "avalyuan.com";
 
 /* Class = "NSTextFieldCell"; title = "Copyright © 2019 yanue.net"; ObjectID = "bCA-au-e3o"; */
