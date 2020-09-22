@@ -4,6 +4,7 @@ Pods
 V2rayU.xcworkspace/xcuserdata
 Build/v2ray-core
 Build/release.sh
+Build/Release
 Build/Products
 Build/Intermediates.noindex
 Build/*.dmg
