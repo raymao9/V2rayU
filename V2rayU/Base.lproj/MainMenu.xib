@@ -31,13 +31,25 @@
         </customObject>
         <menu title="V2rayU" id="9n3-TW-9ur" userLabel="stateMenu">
             <items>
-                <menuItem title="V2ray: On" enabled="NO" id="P34-uO-Vwf">
+                <menuItem title="V2ray-Core: On" enabled="NO" id="P34-uO-Vwf">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="Turn V2ray Off" id="SML-EF-rdT" userLabel="Turn v2ray-core On">
-                    <modifierMask key="keyEquivalentModifierMask"/>
+                <menuItem title="Turn v2ray-core Off" keyEquivalent="t" id="SML-EF-rdT">
                     <connections>
                         <action selector="start:" target="hcZ-V7-Dui" id="XIR-lL-vV2"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="K10-II-m5R"/>
+                <menuItem title="View config.json" id="b3o-tG-rp3">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="viewConfig:" target="hcZ-V7-Dui" id="wgb-Uh-Z1z"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="View Log" id="52m-v5-TzY">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="openLogs:" target="hcZ-V7-Dui" id="ebe-fD-cCz"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="q2e-iz-ozm"/>
@@ -64,33 +76,31 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Servers" id="NCx-DY-Hm4"/>
                 </menuItem>
-                <menuItem title="Configure" id="YoX-II-o27" userLabel="Configure">
-                    <modifierMask key="keyEquivalentModifierMask"/>
+                <menuItem title="Configure..." keyEquivalent="c" id="YoX-II-o27" userLabel="Configure">
                     <connections>
                         <action selector="openConfig:" target="hcZ-V7-Dui" id="cu6-mU-Y02"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Subscribe" id="JuC-lf-LpQ">
+                <menuItem title="Subscribe..." id="JuC-lf-LpQ">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="openPreferenceSubscribe:" target="hcZ-V7-Dui" id="Xax-Nj-ygb"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Pac" id="8ps-CD-zNp">
+                <menuItem title="Pac..." id="8ps-CD-zNp">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="openPreferencePac:" target="hcZ-V7-Dui" id="q2a-9U-SCe"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Ping Speed" id="Ow7-xo-xhV">
+                <menuItem title="Ping Speed..." tag="1" id="Ow7-xo-xhV">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="pingSpeed:" target="hcZ-V7-Dui" id="S0e-Q3-a8R"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="4r0-fk-xMy"/>
-                <menuItem title="Import Server From Pasteboard" toolTip="ss:// or vmess://" id="Kct-KD-qPN">
-                    <modifierMask key="keyEquivalentModifierMask"/>
+                <menuItem title="Import Server From Pasteboard" keyEquivalent="p" toolTip="ss:// or vmess://" id="Kct-KD-qPN">
                     <connections>
                         <action selector="ImportFromPasteboard:" target="hcZ-V7-Dui" id="aP0-Ao-OTD"/>
                     </connections>
@@ -101,37 +111,27 @@
                         <action selector="scanQrcode:" target="hcZ-V7-Dui" id="URj-Vl-1TY"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Share QR Code" id="0vX-fS-8FW">
-                    <modifierMask key="keyEquivalentModifierMask"/>
+                <menuItem title="Share QR Code" keyEquivalent="s" id="0vX-fS-8FW">
                     <connections>
                         <action selector="generateQrcode:" target="hcZ-V7-Dui" id="cUu-eO-w0Z"/>
                     </connections>
                 </menuItem>
-                <menuItem isSeparatorItem="YES" id="gWJ-yg-BaW"/>
                 <menuItem isSeparatorItem="YES" id="mA5-79-fdw"/>
-                <menuItem title="Copy HTTP Proxy Shell Export Line" id="tBG-YP-XJr">
-                    <modifierMask key="keyEquivalentModifierMask"/>
+                <menuItem title="Copy HTTP Proxy Shell Export Line" keyEquivalent="e" id="tBG-YP-XJr">
                     <connections>
                         <action selector="copyExportCommand:" target="hcZ-V7-Dui" id="RET-i4-2bl"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="FfA-RW-Poe"/>
-                <menuItem title="Preferences" id="6jp-RJ-ww9" userLabel="Preference">
-                    <modifierMask key="keyEquivalentModifierMask"/>
+                <menuItem title="Preferences..." keyEquivalent="," id="6jp-RJ-ww9" userLabel="Preference">
                     <connections>
                         <action selector="openPreferenceGeneral:" target="hcZ-V7-Dui" id="ak7-LN-QXy"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Check for Updates" id="adw-ht-RC4">
+                <menuItem title="Check for Updates..." id="adw-ht-RC4">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="checkForUpdate:" target="hcZ-V7-Dui" id="D9u-jO-ZhW"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="Show Logs" id="52m-v5-TzY">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="openLogs:" target="hcZ-V7-Dui" id="ebe-fD-cCz"/>
                     </connections>
                 </menuItem>
                 <menuItem title="Help" id="hWR-vJ-0Au">

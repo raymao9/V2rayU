@@ -3,13 +3,28 @@
 "09i-pj-m0K.title" = "V2rayU";
 
 /* Class = "NSTextFieldCell"; title = "based on v2ray-core v4.21.3"; ObjectID = "8bU-0Q-dTD"; */
-"8bU-0Q-dTD.title" = "based on v2ray-core v4.21.3";
+"8bU-0Q-dTD.title" = "based on v2ray-core v4.28";
 
-/* Class = "NSTextFieldCell"; title = "avalyuan.com"; ObjectID = "Qby-y7-vli"; */
-"Qby-y7-vli.title" = "avalyuan.com";
+/* Class = "NSTextFieldCell"; title = "tech@linktofish.org"; ObjectID = "Guc-nt-FeY"; */
+"Guc-nt-FeY.title" = "tech@linktofish.org";
+
+/* Class = "NSTextFieldCell"; title = "🌍"; ObjectID = "K46-M8-1zq"; */
+"K46-M8-1zq.title" = "🌍";
+
+/* Class = "NSTextFieldCell"; title = "📬"; ObjectID = "OUg-qH-sDe"; */
+"OUg-qH-sDe.title" = "📬";
+
+/* Class = "NSTextFieldCell"; title = "linktofish.org"; ObjectID = "Qby-y7-vli"; */
+"Qby-y7-vli.title" = "linktofish.org";
+
+/* Class = "NSTextFieldCell"; title = "github.com/v2ray"; ObjectID = "Sw8-ch-1M9"; */
+"Sw8-ch-1M9.title" = "github.com/v2ray";
 
 /* Class = "NSTextFieldCell"; title = "Copyright © 2019 yanue.net"; ObjectID = "bCA-au-e3o"; */
-"bCA-au-e3o.title" = "Copyright © 2019 yanue.net";
+"bCA-au-e3o.title" = "Copyright © 2020 yanue";
 
 /* Class = "NSTextFieldCell"; title = "Version 1.0"; ObjectID = "gsf-1V-bbM"; */
-"gsf-1V-bbM.title" = "Version 1.5.1";
+"gsf-1V-bbM.title" = "Version 2.3.1";
+
+/* Class = "NSTextFieldCell"; title = "🔗"; ObjectID = "rUl-Lc-b4S"; */
+"rUl-Lc-b4S.title" = "🔗";

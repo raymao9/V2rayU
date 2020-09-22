@@ -15,8 +15,22 @@
 "QjX-NH-23u.title" = "技術支援";
 
 /* Class = "NSButtonCell"; title = "Clear Logs Everyday Automutically"; ObjectID = "hIN-yp-Qul"; */
-"hIN-yp-Qul.title" = "清理日誌";
+"hIN-yp-Qul.title" = "自動清理日誌";
 
 /* Class = "NSButtonCell"; title = "Check for Updates automutically"; ObjectID = "m2S-Mu-rFM"; */
 "m2S-Mu-rFM.title" = "自動檢測版本更新";
 
+/* Class = "NSTextFieldCell"; title = "Related file locations:"; ObjectID = "Oke-cL-DfS"; */
+"Oke-cL-DfS.title" = "相關檔案路徑：";
+
+/* Class = "NSTextFieldCell"; title = "Switch Proxy Mode:"; ObjectID = "Eu4-bo-oYs"; */
+"Eu4-bo-oYs.title" = "切換路由模式快捷鍵：";
+
+/* Class = "NSTextFieldCell"; title = "Toggle V2ray On/Off:"; ObjectID = "0rn-re-Wn3"; */
+"0rn-re-Wn3.title" = "開關代理快捷鍵：";
+
+/* Class = "NSButtonCell"; title = "Automatically update servers from subscriptions"; ObjectID = "1FR-Yu-tqb"; */
+"1FR-Yu-tqb.title" = "自動更新訂閱";
+
+/* Class = "NSButtonCell"; title = "Automatically select the fastest server by ping"; ObjectID = "Kbp-GI-fkh"; */
+"Kbp-GI-fkh.title" = "自動根據延遲值選擇最優節點";

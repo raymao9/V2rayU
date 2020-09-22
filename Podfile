@@ -14,10 +14,7 @@ target 'V2rayU' do
   pod 'Preferences', :git => 'https://github.com/sindresorhus/Preferences.git'
   pod 'Sparkle'
   pod 'QRCoder'
-  pod "GCDWebServer"
-#  pod 'Socket.IO-Client-Swift'
-#  pod 'SwiftSocket'
-  pod 'SwiftSocket', :git => 'https://github.com/odariusgeorge/SwiftSocket.git', :branch => 'patch-1'
- project 'V2rayU.xcodeproj'
+  pod 'MASShortcut'
+  pod 'Swifter'
 
 end

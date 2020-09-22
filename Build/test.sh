@@ -3,17 +3,19 @@
 
 APP_NAME="V2rayU"
 INFOPLIST_FILE="Info.plist"
-BASE_DIR=$HOME/swift/V2rayU
+BASE_DIR=$HOME/Projects/${APP_NAME}_2.3.1
 BUILD_DIR=${BASE_DIR}/Build
 V2rayU_ARCHIVE=${BUILD_DIR}/V2rayU.xcarchive
-V2rayU_RELEASE=${BUILD_DIR}/release
-APP_Version=$(/usr/libexec/PlistBuddy -c "Print CFBundleShortVersionString" "${BASE_DIR}/${APP_NAME}/${INFOPLIST_FILE}")
+V2rayU_RELEASE=${BUILD_DIR}/Release
+APP_Version=$(sed -n '/MARKETING_VERSION/{s/MARKETING_VERSION = //;s/;//;s/^[[:space:]]*//;p;q;}' ../V2rayU.xcodeproj/project.pbxproj)
 DMG_FINAL="${APP_NAME}.dmg"
-APP_TITLE="${APP_NAME} - V${APP_Version}"
-AppCastDir=$HOME/swift/appcast
+APP_TITLE="${APP_NAME}_${APP_Version}"
+AppCastDir=$HOME/Projects/appcast
+
+
 
 function build() {
-    echo "Building V2rayU."${APP_Version}
+    echo "Building V2rayU "${APP_Version}
     echo "Cleaning up old archive & app..."
     rm -rf ${V2rayU_ARCHIVE} ${V2rayU_RELEASE}
 
@@ -95,44 +97,70 @@ function createDmg() {
     hdiutil convert "${DMG_TMP}" -format UDZO -imagekey zlib-level=9 -o "${DMG_FINAL}"
 
     # appcast sign update
-    ${AppCastDir}/bin/sign_update ${DMG_FINAL}
+    ${BASE_DIR}/Pods/Sparkle/bin/sign_update ${DMG_FINAL}
 
     umount "/Volumes/${APP_NAME}"
 }
 
+# v2ray-core 文件名改为 v2ray-macos-64.zip
+
 function downloadV2ray() {
-    echo "正在查询最新版v2ray ..."
-    rm -fr v2ray-macos.zip v2ray-core
+    echo "正在查询最新版 v2ray ..."
+    rm -fr v2ray-macos-64.zip v2ray-core
     tag=$(curl --silent "https://api.github.com/repos/v2ray/v2ray-core/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
     echo "v2ray-core version: ${tag}"
-    url="https://github.com/v2ray/v2ray-core/releases/download/${tag}/v2ray-macos.zip"
-    echo "正在下载最新版v2ray: ${tag}"
-    curl -Lo v2ray-macos.zip ${url}
-
-    unzip -o v2ray-macos.zip -d v2ray-core
-    rm -fr v2ray-macos.zip
+    url="https://github.com/v2ray/v2ray-core/releases/download/${tag}/v2ray-macos-64.zip"
+    
+    echo "正在下载最新版 v2ray: ${tag}"
+    curl -Lo v2ray-macos-64.zip ${url}
+    unzip -o v2ray-macos-64.zip -d v2ray-core
+    rm -fr v2ray-macos-64.zip
 }
+
+# 更改了打包 dmg 的方式
+
+function createDmgByAppdmg() {
+#    umount "/Volumes/${APP_NAME}"
+
+#    rm -rf ${BUILD_DIR}/${APP_NAME}.app ${BUILD_DIR}/${DMG_FINAL}
+#    \cp -Rf "${V2rayU_RELEASE}/${APP_NAME}.app" "${BUILD_DIR}/${APP_NAME}.app"
+
+    #rm -f  ${BUILD_DIR}/${DMG_FINAL}
+    rm -f  ${V2rayU_RELEASE}/${DMG_FINAL}    
+    # https://github.com/LinusU/node-appdmg
+    # npm install -g appdmg
+    echo ${BUILD_DIR}/appdmg.json
+      
+    appdmg appdmg.json ${DMG_FINAL}
+
+    # appcast sign update
+    ${BASE_DIR}/Pods/Sparkle/bin/sign_update ${DMG_FINAL}
+
+#    umount "/Volumes/${APP_NAME}"
+}
+
 
 echo "正在打包版本: V"${APP_Version}
 read -n1 -r -p "请确认版本号是否正确 [Y/N]? " answer
 case ${answer} in
 Y | y ) echo
-        echo "你选择了Y";;
+        echo "你选择了 Y";;
 N | n ) echo
         echo ""
         echo "OK, goodbye"
         exit;;
 *)
         echo ""
-        echo "请输入Y|N"
+        echo "请输入 Y|N"
         exit;;
 esac
 
 rm -fr ${DMG_FINAL} ${V2rayU_RELEASE}
-updatePlistVersion
+#updatePlistVersion
 downloadV2ray
 build
-createDmg
+createDmgByAppdmg
+
 read -p "请输入版本描述: " release_note
 pushRelease ${release_note}
 generateAppcast ${release_note}

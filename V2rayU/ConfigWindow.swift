@@ -43,6 +43,7 @@ class ConfigWindowController: NSWindowController, NSWindowDelegate, NSTabViewDel
     @IBOutlet weak var VmessView: NSView!
     @IBOutlet weak var ShadowsocksView: NSView!
     @IBOutlet weak var SocksView: NSView!
+    @IBOutlet weak var TrojanView: NSView!
 
     // vmess
     @IBOutlet weak var vmessAddr: NSTextField!
@@ -63,6 +64,12 @@ class ConfigWindowController: NSWindowController, NSWindowDelegate, NSTabViewDel
     @IBOutlet weak var socks5Port: NSTextField!
     @IBOutlet weak var socks5User: NSTextField!
     @IBOutlet weak var socks5Pass: NSTextField!
+
+    // for trojan
+    @IBOutlet weak var trojanAddr: NSTextField!
+    @IBOutlet weak var trojanPort: NSTextField!
+    @IBOutlet weak var trojanPass: NSTextField!
+    @IBOutlet weak var trojanAlpn: NSTextField!
 
     @IBOutlet weak var networkView: NSView!
 
@@ -112,7 +119,6 @@ class ConfigWindowController: NSWindowController, NSWindowDelegate, NSTabViewDel
             // add default
             V2rayServer.add(remark: "default", json: "", isValid: false)
         }
-        
         self.shadowsockMethod.removeAllItems()
         self.shadowsockMethod.addItems(withTitles: V2rayOutboundShadowsockMethod)
 
@@ -206,7 +212,7 @@ class ConfigWindowController: NSWindowController, NSWindowDelegate, NSTabViewDel
         v2rayConfig = V2rayConfig()
 
         defer {
-            if self.configText.string.count > 0 && v2rayConfig.isValid {
+            if self.configText.string.count > 0 {
                 self.bindDataToView()
             }
         }
@@ -241,17 +247,6 @@ class ConfigWindowController: NSWindowController, NSWindowDelegate, NSTabViewDel
 
     // export data to V2rayConfig
     func exportData() {
-        // ========================== base start =======================
-        // base
-//        v2rayConfig.httpPort = self.httpPort.stringValue.replacingOccurrences(of: ",", with: "")
-//        v2rayConfig.socksPort = self.sockPort.stringValue.replacingOccurrences(of: ",", with: "")
-//        v2rayConfig.enableUdp = self.enableUdp.state.rawValue > 0
-//        v2rayConfig.enableMux = self.enableMux.state.rawValue > 0
-//        v2rayConfig.dns = self.dnsServers.stringValue
-//        v2rayConfig.mux = Int(self.muxConcurrent.intValue)
-//        v2rayConfig.isNewVersion = self.version4.state.rawValue > 0
-        // ========================== base end =======================
-
         // ========================== server start =======================
         if self.switchProtocol.indexOfSelectedItem >= 0 {
             v2rayConfig.serverProtocol = self.switchProtocol.titleOfSelectedItem!
@@ -278,13 +273,17 @@ class ConfigWindowController: NSWindowController, NSWindowDelegate, NSTabViewDel
         }
 
         // socks5
-        v2rayConfig.serverSocks5.address = self.socks5Addr.stringValue
-        v2rayConfig.serverSocks5.port = self.socks5Port.stringValue
+        v2rayConfig.serverSocks5.servers[0].address = self.socks5Addr.stringValue
+        v2rayConfig.serverSocks5.servers[0].port = Int(self.socks5Port.intValue)
 
         var sockUser = V2rayOutboundSockUser()
         sockUser.user = self.socks5User.stringValue
         sockUser.pass = self.socks5Pass.stringValue
-        v2rayConfig.serverSocks5.users = [sockUser]
+        if self.socks5User.stringValue.count > 0 || self.socks5Pass.stringValue.count > 0 {
+            v2rayConfig.serverSocks5.servers[0].users = [sockUser]
+        } else {
+            v2rayConfig.serverSocks5.servers[0].users = nil
+        }
         // ========================== server end =======================
 
         // ========================== stream start =======================
@@ -344,7 +343,6 @@ class ConfigWindowController: NSWindowController, NSWindowDelegate, NSTabViewDel
         self.enableUdp.intValue = v2rayConfig.enableUdp ? 1 : 0
         self.enableMux.intValue = v2rayConfig.enableMux ? 1 : 0
         self.muxConcurrent.intValue = Int32(v2rayConfig.mux)
-        self.dnsServers.title = v2rayConfig.dns
         self.version4.intValue = v2rayConfig.isNewVersion ? 1 : 0
         // ========================== base end =======================
 
@@ -372,13 +370,12 @@ class ConfigWindowController: NSWindowController, NSWindowDelegate, NSTabViewDel
         self.shadowsockMethod.selectItem(withTitle: v2rayConfig.serverShadowsocks.method)
 
         // socks5
-        self.socks5Addr.stringValue = v2rayConfig.serverSocks5.address
-        self.socks5Port.stringValue = v2rayConfig.serverSocks5.port
-        if v2rayConfig.serverSocks5.users.count > 0 {
-            self.socks5User.stringValue = v2rayConfig.serverSocks5.users[0].user
-            self.socks5Pass.stringValue = v2rayConfig.serverSocks5.users[0].pass
+        self.socks5Addr.stringValue = v2rayConfig.serverSocks5.servers[0].address
+        self.socks5Port.stringValue = String(v2rayConfig.serverSocks5.servers[0].port)
+        if let users = v2rayConfig.serverSocks5.servers[0].users, users.count > 0 {
+            self.socks5User.stringValue = users[0].user
+            self.socks5Pass.stringValue = users[0].pass
         }
-
         // ========================== server end =======================
 
         // ========================== stream start =======================
@@ -578,7 +575,7 @@ class ConfigWindowController: NSWindowController, NSWindowDelegate, NSTabViewDel
         }
         NSWorkspace.shared.open(url)
     }
-    
+
     @IBAction func goStreamHelp(_ sender: Any) {
         guard let url = URL(string: "https://www.v2ray.com/chapter_02/05_transport.html") else {
             return
@@ -631,8 +628,11 @@ class ConfigWindowController: NSWindowController, NSWindowDelegate, NSTabViewDel
         case "socks":
             self.SocksView.isHidden = false
             break;
+        case "trojan":
+            self.TrojanView.isHidden = false
+            break;
         default: // vmess
-            self.SocksView.isHidden = true
+            self.VmessView.isHidden = true
             break
         }
     }
@@ -703,15 +703,19 @@ class ConfigWindowController: NSWindowController, NSWindowDelegate, NSTabViewDel
 
     @IBAction func cancel(_ sender: NSButton) {
         // hide dock icon and close all opened windows
-      _ = menuController.showDock(state: false)
+        _ = menuController.showDock(state: false)
     }
 
     @IBAction func goAdvanceSetting(_ sender: Any) {
         preferencesWindowController.show(preferencePane: .advanceTab)
     }
-    
+
     @IBAction func goSubscribeSetting(_ sender: Any) {
         preferencesWindowController.show(preferencePane: .subscribeTab)
+    }
+
+    @IBAction func goRoutingRuleSetting(_ sender: Any) {
+        preferencesWindowController.show(preferencePane: .routingTab)
     }
 }
 

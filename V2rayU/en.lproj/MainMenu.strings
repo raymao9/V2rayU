@@ -20,14 +20,14 @@
 /* Class = "NSMenuItem"; title = "Capitalize"; ObjectID = "3Hg-b3-phw"; */
 "3Hg-b3-phw.title" = "Capitalize";
 
-/* Class = "NSMenuItem"; title = "Show Logs..."; ObjectID = "52m-v5-TzY"; */
-"52m-v5-TzY.title" = "Show Logs";
+/* Class = "NSMenuItem"; title = "View Log"; ObjectID = "52m-v5-TzY"; */
+"52m-v5-TzY.title" = "View Log";
 
 /* Class = "NSMenuItem"; title = "Smart Dashes"; ObjectID = "6aH-vb-Jom"; */
 "6aH-vb-Jom.title" = "Smart Dashes";
 
 /* Class = "NSMenuItem"; title = "Preferences..."; ObjectID = "6jp-RJ-ww9"; */
-"6jp-RJ-ww9.title" = "Preferences";
+"6jp-RJ-ww9.title" = "Preferences...";
 
 /* Class = "NSMenuItem"; title = "Speech"; ObjectID = "6ks-XF-0pf"; */
 "6ks-XF-0pf.title" = "Speech";
@@ -39,7 +39,7 @@
 "7Fw-Hy-HhI.title" = "Smart Copy/Paste";
 
 /* Class = "NSMenuItem"; title = "Pac..."; ObjectID = "8ps-CD-zNp"; */
-"8ps-CD-zNp.title" = "Pac";
+"8ps-CD-zNp.title" = "Pac...";
 
 /* Class = "NSMenuItem"; title = "Select All"; ObjectID = "8zL-Er-HLk"; */
 "8zL-Er-HLk.title" = "Select All";
@@ -63,7 +63,7 @@
 "Jms-CT-Lld.title" = "Cut";
 
 /* Class = "NSMenuItem"; title = "Subscribe..."; ObjectID = "JuC-lf-LpQ"; */
-"JuC-lf-LpQ.title" = "Subscribe";
+"JuC-lf-LpQ.title" = "Subscribe...";
 
 /* Class = "NSMenuItem"; ibShadowedToolTip = "ss:// or vmess://"; ObjectID = "Kct-KD-qPN"; */
 "Kct-KD-qPN.ibShadowedToolTip" = "ss:// or vmess://";
@@ -81,7 +81,7 @@
 "NrZ-oB-7yd.title" = "Pac Mode";
 
 /* Class = "NSMenuItem"; title = "Ping Speed..."; ObjectID = "Ow7-xo-xhV"; */
-"Ow7-xo-xhV.title" = "Ping Speed";
+"Ow7-xo-xhV.title" = "Ping Speed...";
 
 /* Class = "NSMenuItem"; title = "V2ray-Core: On"; ObjectID = "P34-uO-Vwf"; */
 "P34-uO-Vwf.title" = "V2ray-Core: On";
@@ -114,7 +114,7 @@
 "YJ7-xF-H1b.title" = "Spelling and Grammar";
 
 /* Class = "NSMenuItem"; title = "Configure..."; ObjectID = "YoX-II-o27"; */
-"YoX-II-o27.title" = "Configure";
+"YoX-II-o27.title" = "Configure...";
 
 /* Class = "NSMenuItem"; title = "Start Speaking"; ObjectID = "Z1o-Jx-e0t"; */
 "Z1o-Jx-e0t.title" = "Start Speaking";
@@ -123,10 +123,13 @@
 "aRc-dd-sOs.title" = "Smart Links";
 
 /* Class = "NSMenuItem"; title = "Check for Updates..."; ObjectID = "adw-ht-RC4"; */
-"adw-ht-RC4.title" = "Check for Updates";
+"adw-ht-RC4.title" = "Check for Updates...";
 
 /* Class = "NSMenuItem"; title = "Make Upper Case"; ObjectID = "aeo-mB-Ib5"; */
 "aeo-mB-Ib5.title" = "Make Upper Case";
+
+/* Class = "NSMenuItem"; title = "View config.json"; ObjectID = "b3o-tG-rp3"; */
+"b3o-tG-rp3.title" = "View config.json";
 
 /* Class = "NSMenuItem"; title = "Servers"; ObjectID = "cio-ej-HL5"; */
 "cio-ej-HL5.title" = "Servers";
@@ -174,7 +177,7 @@
 "qnn-5c-qTN.title" = "Show Substitutions";
 
 /* Class = "NSMenuItem"; title = "Find and Replace…"; ObjectID = "r36-iu-f2X"; */
-"r36-iu-f2X.title" = "Find and Replace";
+"r36-iu-f2X.title" = "Find and Replace…";
 
 /* Class = "NSMenuItem"; title = "Global Mode"; ObjectID = "sZL-Iu-xAt"; */
 "sZL-Iu-xAt.title" = "Global Mode";

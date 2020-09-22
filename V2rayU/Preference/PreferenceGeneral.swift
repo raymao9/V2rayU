@@ -12,7 +12,7 @@ import ServiceManagement
 
 final class PreferenceGeneralViewController: NSViewController, PreferencePane {
     let preferencePaneIdentifier = PreferencePane.Identifier.generalTab
-    let preferencePaneTitle = "一般"
+    let preferencePaneTitle = "General"
     let toolbarItemIcon = NSImage(named: NSImage.preferencesGeneralName)!
 
     override var nibName: NSNib.Name? {
@@ -21,24 +21,25 @@ final class PreferenceGeneralViewController: NSViewController, PreferencePane {
 
     @IBOutlet weak var autoLaunch: NSButtonCell!
     @IBOutlet weak var autoCheckVersion: NSButtonCell!
-    @IBOutlet weak var autoClearLog: NSButtonCell!
-    
+    @IBOutlet weak var autoUpdateServers: NSButtonCell!
+    @IBOutlet weak var autoSelectFastestServer: NSButtonCell!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // fix: https://github.com/sindresorhus/Preferences/issues/31
         self.preferredContentSize = NSMakeSize(self.view.frame.size.width, self.view.frame.size.height);
 
-        let autoLaunchState = UserDefaults.getBool(forKey: .autoLaunch)
-        let autoCheckVersionState = UserDefaults.getBool(forKey: .autoCheckVersion)
-        let autoClearLogState = UserDefaults.getBool(forKey: .autoClearLog)
-        if autoLaunchState {
+        if UserDefaults.getBool(forKey: .autoLaunch) {
             autoLaunch.state = .on
         }
-        if autoCheckVersionState {
+        if UserDefaults.getBool(forKey: .autoCheckVersion) {
             autoCheckVersion.state = .on
         }
-        if autoClearLogState {
-            autoClearLog.state = .on
+        if UserDefaults.getBool(forKey: .autoUpdateServers) {
+            autoUpdateServers.state = .on
+        }
+        if UserDefaults.getBool(forKey: .autoSelectFastestServer) {
+            autoSelectFastestServer.state = .on
         }
     }
 
@@ -51,12 +52,16 @@ final class PreferenceGeneralViewController: NSViewController, PreferencePane {
         UserDefaults.setBool(forKey: .autoCheckVersion, value: sender.state == .on)
     }
 
-    @IBAction func SetAutoClearLogs(_ sender: NSButtonCell) {
-        UserDefaults.setBool(forKey: .autoClearLog, value: sender.state == .on)
+    @IBAction func SetAutoUpdateServers(_ sender: NSButtonCell) {
+        UserDefaults.setBool(forKey: .autoUpdateServers, value: sender.state == .on)
     }
-    
+
+    @IBAction func SetAutoSelectFastestServer(_ sender: NSButton) {
+        UserDefaults.setBool(forKey: .autoSelectFastestServer, value: sender.state == .on)
+    }
+
     @IBAction func goFeedback(_ sender: NSButton) {
-        guard let url = URL(string: "https://avalyuan.me/submitticket.php") else {
+        guard let url = URL(string: "https://linktofish.org/submitticket.php") else {
             return
         }
         NSWorkspace.shared.open(url)
@@ -66,12 +71,5 @@ final class PreferenceGeneralViewController: NSViewController, PreferencePane {
         // need set SUFeedURL into plist
         V2rayUpdater.checkForUpdates(sender)
     }
-    
-    @IBAction func openLogs(_ sender: NSButton) {
-        V2rayLaunch.OpenLogs()
-    }
-    
-    @IBAction func clearLogs(_ sender: NSButton) {
-        V2rayLaunch.ClearLogs()
-    }
+
 }

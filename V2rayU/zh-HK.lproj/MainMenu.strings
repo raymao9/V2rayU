@@ -39,7 +39,7 @@
 "7Fw-Hy-HhI.title" = "智能复制/粘贴";
 
 /* Class = "NSMenuItem"; title = "Pac..."; ObjectID = "8ps-CD-zNp"; */
-"8ps-CD-zNp.title" = "Pac設置";
+"8ps-CD-zNp.title" = "Pac 設置";
 
 /* Class = "NSMenuItem"; title = "Select All"; ObjectID = "8zL-Er-HLk"; */
 "8zL-Er-HLk.title" = "全选";
@@ -78,10 +78,10 @@
 "Ndr-EN-mCf.title" = "Substitutions";
 
 /* Class = "NSMenuItem"; title = "Pac Mode"; ObjectID = "NrZ-oB-7yd"; */
-"NrZ-oB-7yd.title" = "Pac模式";
+"NrZ-oB-7yd.title" = "Pac 模式";
 
 /* Class = "NSMenuItem"; title = "V2ray-Core: On"; ObjectID = "P34-uO-Vwf"; */
-"P34-uO-Vwf.title" = "啟動V2ray-core";
+"P34-uO-Vwf.title" = "啟動 V2ray-core";
 
 /* Class = "NSMenu"; title = "Transformations"; ObjectID = "Qr9-cc-EbP"; */
 "Qr9-cc-EbP.title" = "Transformations";
@@ -180,7 +180,7 @@
 "ssN-pW-aqd.title" = "Find";
 
 /* Class = "NSMenuItem"; title = "Copy HTTP Proxy Shell Export Line"; ObjectID = "tBG-YP-XJr"; */
-"tBG-YP-XJr.title" = "複製總端代理命令";
+"tBG-YP-XJr.title" = "複製終端代理命令";
 
 /* Class = "NSMenuItem"; title = "Transformations"; ObjectID = "uSH-Cb-tWZ"; */
 "uSH-Cb-tWZ.title" = "Transformations";
@@ -193,3 +193,6 @@
 
 /* Class = "NSMenuItem"; title = "Check Spelling While Typing"; ObjectID = "zAf-Lw-Sh2"; */
 "zAf-Lw-Sh2.title" = "Check Spelling While Typing";
+
+/* Class = "NSMenuItem"; title = "View config.json"; ObjectID = "b3o-tG-rp3"; */
+"b3o-tG-rp3.title" = "查看config.json";

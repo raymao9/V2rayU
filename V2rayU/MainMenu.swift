@@ -19,6 +19,8 @@ extension PreferencePane.Identifier {
     static let advanceTab = Identifier("advanceTab")
     static let subscribeTab = Identifier("subscribeTab")
     static let pacTab = Identifier("pacTab")
+    static let routingTab = Identifier("routingTab")
+    static let dnsTab = Identifier("dnsTab")
     static let aboutTab = Identifier("aboutTab")
 }
 
@@ -28,10 +30,94 @@ let preferencesWindowController = PreferencesWindowController(
             PreferenceAdvanceViewController(),
             PreferenceSubscribeViewController(),
             PreferencePacViewController(),
+            PreferenceRoutingViewController(),
+            PreferenceDnsViewController(),
             PreferenceAboutViewController(),
         ]
 )
 var qrcodeWindow = QrcodeWindowController()
+
+var toastWindowCtrl: ToastWindowController!
+
+func makeToast(message: String, displayDuration: Double? = 2) {
+    if toastWindowCtrl != nil {
+        toastWindowCtrl.close()
+    }
+    toastWindowCtrl = ToastWindowController()
+    toastWindowCtrl.message = message
+    toastWindowCtrl.showWindow(Any.self)
+    toastWindowCtrl.fadeInHud(displayDuration)
+}
+
+func ToggleRunning(_ toast: Bool = true) {
+    // turn off
+    if UserDefaults.getBool(forKey: .v2rayTurnOn) {
+        menuController.stopV2rayCore()
+        if toast {
+            makeToast(message: "V2ray: Off")
+        }
+        return
+    }
+
+    // start
+    menuController.startV2rayCore()
+    if toast {
+        makeToast(message: "V2ray: On")
+    }
+}
+
+func SwitchProxyMode() {
+    let runMode = RunMode(rawValue: UserDefaults.get(forKey: .runMode) ?? "manual") ?? .manual
+
+    switch runMode {
+    case .pac:
+        menuController.switchRunMode(runMode: .global)
+        makeToast(message: "V2rayU: global Mode")
+        break
+    case .global:
+        menuController.switchRunMode(runMode: .manual)
+        makeToast(message: "V2rayU: manual Mode")
+        break
+    case .manual:
+        menuController.switchRunMode(runMode: .pac)
+        makeToast(message: "V2rayU: pac Mode")
+        break
+
+    default: break
+    }
+}
+
+// regenerate All Config when base setting changed
+func regenerateAllConfig() {
+    NSLog("regenerateAllConfig.")
+
+    for (idx, item) in V2rayServer.list().enumerated() {
+        if !item.isValid {
+            continue
+        }
+
+        // parse old
+        let vCfg = V2rayConfig()
+        vCfg.parseJson(jsonText: item.json)
+
+        // combine
+        let text = vCfg.combineManual()
+        _ = V2rayServer.save(idx: idx, isValid: vCfg.isValid, jsonData: text)
+
+        print("regenerate config", item.remark)
+    }
+
+    // restart service
+    let item = V2rayServer.loadSelectedItem()
+    if item != nil {
+        menuController.startV2rayCore()
+    }
+
+    // reload config window
+    if menuController.configWindow != nil {
+        menuController.configWindow.serversTableView.reloadData()
+    }
+}
 
 // menu controller
 class MenuController: NSObject, NSMenuDelegate {
@@ -51,6 +137,9 @@ class MenuController: NSObject, NSMenuDelegate {
 
     // when menu.xib loaded
     override func awakeFromNib() {
+        // windowWillClose Notification
+        NotificationCenter.default.addObserver(self, selector: #selector(configWindowWillClose(notification:)), name: NSWindow.willCloseNotification, object: nil)
+
         V2rayLaunch.chmodCmdPermission()
 
         // backup system proxy when init
@@ -89,7 +178,12 @@ class MenuController: NSObject, NSMenuDelegate {
 
         statusItem.menu = statusMenu
 
-//        self.configWindow = ConfigWindowController()
+        // version before 1.5.2: res.rawValue is 0 or -1
+        let isOldConfigVersion = appVersion.compare("1.5.2", options: .numeric).rawValue > 0
+        print("isOldConfigVersion", isOldConfigVersion)
+        if !isOldConfigVersion {
+            regenerateAllConfig()
+        }
 
         if UserDefaults.getBool(forKey: .v2rayTurnOn) {
             // start
@@ -100,8 +194,13 @@ class MenuController: NSObject, NSMenuDelegate {
             self.setStatusOff()
         }
 
-        // windowWillClose Notification
-        NotificationCenter.default.addObserver(self, selector: #selector(configWindowWillClose(notification:)), name: NSWindow.willCloseNotification, object: nil)
+        // auto update subscribe servers
+        if UserDefaults.getBool(forKey: .autoUpdateServers) {
+            V2raySubSync().sync()
+        }
+
+        // ping
+        PingSpeed().pingAll()
     }
 
     @IBAction func openLogs(_ sender: NSMenuItem) {
@@ -125,7 +224,7 @@ class MenuController: NSObject, NSMenuDelegate {
         toggleV2rayItem.title = "Turn V2ray Off"
 
         var iconName = "IconOn"
-        
+
         switch runMode {
         case .global:
             iconName = "IconOnG"
@@ -136,7 +235,7 @@ class MenuController: NSObject, NSMenuDelegate {
         default:
             break
         }
-        
+
         if let button = statusItem.button {
             button.image = NSImage(named: NSImage.Name(iconName))
         }
@@ -157,6 +256,10 @@ class MenuController: NSObject, NSMenuDelegate {
     // start v2ray core
     func startV2rayCore() {
         NSLog("start v2ray-core begin")
+        if !V2rayLaunch.checkPorts() {
+            setStatusOff()
+            return
+        }
 
         guard let v2ray = V2rayServer.loadSelectedItem() else {
             noticeTip(title: "start v2ray fail", subtitle: "", informativeText: "v2ray config not found")
@@ -169,9 +272,9 @@ class MenuController: NSObject, NSMenuDelegate {
             setStatusOff()
             return
         }
-        
+
         let runMode = RunMode(rawValue: UserDefaults.get(forKey: .runMode) ?? "manual") ?? .manual
-        
+
         // create json file
         V2rayConfig.createJsonFile(item: v2ray)
 
@@ -187,14 +290,7 @@ class MenuController: NSObject, NSMenuDelegate {
     }
 
     @IBAction func start(_ sender: NSMenuItem) {
-        // turn off
-        if UserDefaults.getBool(forKey: .v2rayTurnOn) {
-            self.stopV2rayCore()
-            return
-        }
-
-        // start
-        self.startV2rayCore()
+        ToggleRunning(false)
     }
 
     @IBAction func quitClicked(_ sender: NSMenuItem) {
@@ -221,7 +317,7 @@ class MenuController: NSObject, NSMenuDelegate {
         }
 
         if !obj.isValid {
-            NSLog("current server is invaid", obj.remark)
+            NSLog("current server is invalid", obj.remark)
             return
         }
         // set current
@@ -287,7 +383,7 @@ class MenuController: NSObject, NSMenuDelegate {
     }
 
     @IBAction func goHelp(_ sender: NSMenuItem) {
-        guard let url = URL(string: "https://avalyuan.me/knowledgebase.php") else {
+        guard let url = URL(string: "https://github.com/yanue/v2rayu/wiki") else {
             return
         }
         NSWorkspace.shared.open(url)
@@ -306,7 +402,20 @@ class MenuController: NSObject, NSMenuDelegate {
             }
 
             let menuItem: NSMenuItem = NSMenuItem()
-            menuItem.title = String(item.speed) + "ms\t    " + item.remark
+            let ping = item.speed.count > 0 ? item.speed : "-1ms"
+            let totalSpaceCnt = 10
+            var spaceCnt = totalSpaceCnt - ping.count
+            // littleSpace: 1,.
+            if ping.contains(".") || ping.contains("1"){
+                let littleSpaceCount = ping.filter({ $0 == "." }).count + ping.filter({ $0 == "1" }).count
+                spaceCnt = totalSpaceCnt - ((ping.count - littleSpaceCount) + Int((ping.count - littleSpaceCount)/2))
+            }
+            if ping.contains("-1ms") {
+                spaceCnt = 9
+            }
+            let space = String(repeating: " ", count: spaceCnt < 0 ? 0 : spaceCnt) + "　"
+
+            menuItem.title = ping + space + item.remark
             menuItem.action = #selector(self.switchServer(_:))
             menuItem.representedObject = item
             menuItem.target = self
@@ -366,10 +475,11 @@ class MenuController: NSObject, NSMenuDelegate {
             sockPort = cfg.socksPort
             httpPort = cfg.httpPort
         }
-        
+
         // set icon
         setStatusOn(runMode: runMode)
-        
+        // launch
+        V2rayLaunch.Start()
         // manual mode
         if lastRunMode == RunMode.manual.rawValue {
             // backup first
@@ -380,12 +490,6 @@ class MenuController: NSObject, NSMenuDelegate {
         if runMode == .global {
             V2rayLaunch.setSystemProxy(mode: .global, httpPort: httpPort, sockPort: sockPort)
             return
-        }
-
-        // pac mode
-        if runMode == .pac {
-            // generate pac file
-            _ = GeneratePACFile(rewrite: false)
         }
 
         V2rayLaunch.setSystemProxy(mode: runMode)
@@ -457,28 +561,20 @@ class MenuController: NSObject, NSMenuDelegate {
     }
 
     @IBAction func pingSpeed(_ sender: NSMenuItem) {
-        let itemList = V2rayServer.list()
-        if itemList.count == 0 {
+        PingSpeed().pingAll()
+    }
+
+    @IBAction func viewConfig(_ sender: Any) {
+        let confUrl = PACUrl.replacingOccurrences(of: "pac/proxy.js", with: "config.json")
+        guard let url = URL(string: confUrl) else {
             return
         }
-
-        for item in itemList {
-            if !item.isValid {
-                continue
-            }
-            
-            let ping = Ping(item: item)
-            ping.pingProxySpeed()
-        }
-
-        V2rayServer.saveItemList()
-        // refresh server
-        self.showServers()
+        NSWorkspace.shared.open(url)
     }
 
     func importUri(url: String) {
         let urls = url.split(separator: "\n")
-        
+
         for url in urls {
             let uri = url.trimmingCharacters(in: .whitespaces)
 
@@ -510,6 +606,11 @@ class MenuController: NSObject, NSMenuDelegate {
             // refresh server
             self.showServers()
 
+            // reload server
+            if menuController.configWindow != nil {
+                menuController.configWindow.serversTableView.reloadData()
+            }
+
             noticeTip(title: "import server success", subtitle: "", informativeText: importUri.remark)
         } else {
             noticeTip(title: "import server fail", subtitle: "", informativeText: importUri.error)
@@ -517,13 +618,6 @@ class MenuController: NSObject, NSMenuDelegate {
     }
 
     func noticeTip(title: String = "", subtitle: String = "", informativeText: String = "") {
-        // 定义NSUserNotification
-        let userNotification = NSUserNotification()
-        userNotification.title = title
-        userNotification.subtitle = subtitle
-        userNotification.informativeText = informativeText
-        // 使用NSUserNotificationCenter发送NSUserNotification
-        let userNotificationCenter = NSUserNotificationCenter.default
-        userNotificationCenter.scheduleNotification(userNotification)
+        makeToast(message: title + (subtitle.count > 0 ? " - " + subtitle : "") + " : " + informativeText)
     }
 }

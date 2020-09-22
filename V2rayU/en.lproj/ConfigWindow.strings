@@ -27,7 +27,7 @@
 "2O3-hb-VOR.ibShadowedToolTip" = "Discard all the changes";
 
 /* Class = "NSButtonCell"; title = "Udp"; ObjectID = "2V8-SA-uUd"; */
-"2V8-SA-uUd.title" = "UDP";
+"2V8-SA-uUd.title" = "Udp";
 
 /* Class = "NSBox"; title = "Vmess"; ObjectID = "2c7-Ac-bR8"; */
 "2c7-Ac-bR8.title" = "Vmess";
@@ -90,7 +90,7 @@
 "GBr-yR-BZv.title" = "downlinkCapacity";
 
 /* Class = "NSButtonCell"; title = "subscribe"; ObjectID = "H9t-q7-Sop"; */
-"H9t-q7-Sop.title" = "Subscribe";
+"H9t-q7-Sop.title" = "subscribe";
 
 /* Class = "NSTextFieldCell"; title = "response:"; ObjectID = "HMZ-z3-aYN"; */
 "HMZ-z3-aYN.title" = "response:";
@@ -135,7 +135,7 @@
 "OPq-km-B7m.title" = "please go to the \"import\" tab to edit manually.";
 
 /* Class = "NSButtonCell"; title = "show log"; ObjectID = "OQK-lm-eg7"; */
-"OQK-lm-eg7.title" = "Show Logs";
+"OQK-lm-eg7.title" = "show log";
 
 /* Class = "NSTextFieldCell"; title = "Base Settings"; ObjectID = "PYw-vm-Rfw"; */
 "PYw-vm-Rfw.title" = "Base Settings";
@@ -159,7 +159,7 @@
 "Sfj-g1-5za.title" = "address:";
 
 /* Class = "NSButtonCell"; title = "settings"; ObjectID = "ShP-eu-gQk"; */
-"ShP-eu-gQk.title" = "Settings";
+"ShP-eu-gQk.title" = "settings";
 
 /* Class = "NSTextFieldCell"; title = "pass:"; ObjectID = "UH8-2N-BnF"; */
 "UH8-2N-BnF.title" = "pass:";
@@ -183,7 +183,7 @@
 "Yuq-zS-ktS.title" = "method:";
 
 /* Class = "NSButtonCell"; title = "above 4.0"; ObjectID = "a6s-FY-a2J"; */
-"a6s-FY-a2J.title" = "4.0+";
+"a6s-FY-a2J.title" = "above 4.0";
 
 /* Class = "NSMenuItem"; title = "chacha20-poly1305"; ObjectID = "aU5-Cf-sxB"; */
 "aU5-Cf-sxB.title" = "chacha20-poly1305";
@@ -204,16 +204,16 @@
 "btZ-hB-lY3.title" = "tls";
 
 /* Class = "NSButtonCell"; title = "advance settings"; ObjectID = "bzw-de-71C"; */
-"bzw-de-71C.title" = "Advance Settings";
+"bzw-de-71C.title" = "advance settings";
 
 /* Class = "NSTextFieldCell"; title = "v2ray servers"; ObjectID = "cDc-Am-19S"; */
-"cDc-Am-19S.title" = "V2ray Servers";
+"cDc-Am-19S.title" = "v2ray servers";
 
 /* Class = "NSTextFieldCell"; title = "password:"; ObjectID = "cwd-EI-sWQ"; */
 "cwd-EI-sWQ.title" = "password:";
 
 /* Class = "NSButtonCell"; title = "clear log"; ObjectID = "ePD-L5-rbO"; */
-"ePD-L5-rbO.title" = "Clear Logs";
+"ePD-L5-rbO.title" = "clear log";
 
 /* Class = "NSTextFieldCell"; title = "tls servername"; ObjectID = "egK-uE-7g3"; */
 "egK-uE-7g3.title" = "tls servername";
@@ -228,7 +228,7 @@
 "fkC-Lg-nTb.title" = "aes-256-cfb";
 
 /* Class = "NSTextFieldCell"; title = "Sock Port"; ObjectID = "hAL-aX-7Ga"; */
-"hAL-aX-7Ga.title" = "Socks Port";
+"hAL-aX-7Ga.title" = "Sock Port";
 
 /* Class = "NSMenuItem"; title = "utp"; ObjectID = "hAO-vb-BxU"; */
 "hAO-vb-BxU.title" = "utp";
@@ -323,6 +323,9 @@
 /* Class = "NSTextFieldCell"; title = "security:"; ObjectID = "tll-di-y9v"; */
 "tll-di-y9v.title" = "security:";
 
+/* Class = "NSButtonCell"; title = "routing rule"; ObjectID = "tnn-Re-xYl"; */
+"tnn-Re-xYl.title" = "routing rule";
+
 /* Class = "NSTextFieldCell"; title = "type:"; ObjectID = "uWr-DG-11J"; */
 "uWr-DG-11J.title" = "type:";
 
@@ -339,7 +342,7 @@
 "wJ6-w5-BFy.title" = "wireguard";
 
 /* Class = "NSTextFieldCell"; title = "Http Port"; ObjectID = "x5e-89-s7I"; */
-"x5e-89-s7I.title" = "HTTP Port";
+"x5e-89-s7I.title" = "Http Port";
 
 /* Class = "NSMenuItem"; title = "domainsocket"; ObjectID = "xGT-Gg-PB5"; */
 "xGT-Gg-PB5.title" = "domainsocket";

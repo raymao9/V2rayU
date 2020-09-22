@@ -11,7 +11,7 @@ import Preferences
 
 final class PreferenceAdvanceViewController: NSViewController, PreferencePane {
     let preferencePaneIdentifier = PreferencePane.Identifier.advanceTab
-    let preferencePaneTitle = "進階"
+    let preferencePaneTitle = "Advance"
     let toolbarItemIcon = NSImage(named: NSImage.advancedName)!
 
     @IBOutlet weak var saveBtn: NSButtonCell!
@@ -23,10 +23,10 @@ final class PreferenceAdvanceViewController: NSViewController, PreferencePane {
 
     @IBOutlet weak var enableUdp: NSButton!
     @IBOutlet weak var enableMux: NSButton!
+    @IBOutlet weak var enableSniffing: NSButton!
 
     @IBOutlet weak var muxConcurrent: NSTextField!
     @IBOutlet weak var logLevel: NSPopUpButton!
-    @IBOutlet weak var dnsServers: NSTextField!
     @IBOutlet weak var tips: NSTextField!
 
     override var nibName: NSNib.Name? {
@@ -41,13 +41,13 @@ final class PreferenceAdvanceViewController: NSViewController, PreferencePane {
 
         let enableMuxState = UserDefaults.getBool(forKey: .enableMux)
         let enableUdpState = UserDefaults.getBool(forKey: .enableUdp)
+        let enableSniffingState = UserDefaults.getBool(forKey: .enableSniffing)
 
         let localSockPort = UserDefaults.get(forKey: .localSockPort) ?? "1080"
         let localSockHost = UserDefaults.get(forKey: .localSockHost) ?? "127.0.0.1"
         let localHttpPort = UserDefaults.get(forKey: .localHttpPort) ?? "1087"
         let localHttpHost = UserDefaults.get(forKey: .localHttpHost) ?? "127.0.0.1"
         let localPacPort = UserDefaults.get(forKey: .localPacPort) ?? "11085"
-        let dnsServers = UserDefaults.get(forKey: .dnsServers) ?? ""
         let muxConcurrent = UserDefaults.get(forKey: .muxConcurrent) ?? "8"
 
         // select item
@@ -56,12 +56,12 @@ final class PreferenceAdvanceViewController: NSViewController, PreferencePane {
 
         self.enableUdp.state = enableUdpState ? .on : .off
         self.enableMux.state = enableMuxState ? .on : .off
+        self.enableSniffing.state = enableSniffingState ? .on : .off
         self.sockPort.stringValue = localSockPort
         self.sockHost.stringValue = localSockHost
         self.httpPort.stringValue = localHttpPort
         self.httpHost.stringValue = localHttpHost
         self.pacPort.stringValue = localPacPort
-        self.dnsServers.stringValue = dnsServers
         self.muxConcurrent.intValue = Int32(muxConcurrent) ?? 8;
     }
 
@@ -71,27 +71,36 @@ final class PreferenceAdvanceViewController: NSViewController, PreferencePane {
     }
 
     func saveSettingsAndReload() {
-
-        let httpPortVal = self.httpPort.stringValue.replacingOccurrences(of: ",", with: "")
-        let sockPortVal = self.sockPort.stringValue.replacingOccurrences(of: ",", with: "")
-        let pacPortVal = self.pacPort.stringValue.replacingOccurrences(of: ",", with: "")
+        let httpPortVal = String(self.httpPort.intValue)
+        let sockPortVal = String(self.sockPort.intValue)
+        let pacPortVal = String(self.pacPort.intValue)
 
         let enableUdpVal = self.enableUdp.state.rawValue > 0
         let enableMuxVal = self.enableMux.state.rawValue > 0
+        let enableSniffingVal = self.enableSniffing.state.rawValue > 0
 
-        let dnsServersVal = self.dnsServers.stringValue
         let muxConcurrentVal = self.muxConcurrent.intValue
+
+        if httpPortVal == sockPortVal || httpPortVal == pacPortVal || sockPortVal == pacPortVal {
+            self.tips.stringValue = "the ports(http,sock,pac) cannot be the same"
+
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                // your code here
+                self.tips.stringValue = ""
+            }
+            return
+        }
 
         // save
         UserDefaults.setBool(forKey: .enableUdp, value: enableUdpVal)
         UserDefaults.setBool(forKey: .enableMux, value: enableMuxVal)
+        UserDefaults.setBool(forKey: .enableSniffing, value: enableSniffingVal)
 
         UserDefaults.set(forKey: .localHttpPort, value: httpPortVal)
         UserDefaults.set(forKey: .localHttpHost, value: self.httpHost.stringValue)
         UserDefaults.set(forKey: .localSockPort, value: sockPortVal)
         UserDefaults.set(forKey: .localSockHost, value: self.sockHost.stringValue)
         UserDefaults.set(forKey: .localPacPort, value: pacPortVal)
-        UserDefaults.set(forKey: .dnsServers, value: dnsServersVal)
         UserDefaults.set(forKey: .muxConcurrent, value: String(muxConcurrentVal))
         print("self.sockHost.stringValue", self.sockHost.stringValue)
 
@@ -107,21 +116,11 @@ final class PreferenceAdvanceViewController: NSViewController, PreferencePane {
         v2rayConfig.socksPort = sockPortVal
         v2rayConfig.enableUdp = enableUdpVal
         v2rayConfig.enableMux = enableMuxVal
-        v2rayConfig.dns = dnsServersVal
         v2rayConfig.mux = Int(muxConcurrentVal)
         v2rayConfig.logLevel = logLevelName
 
         // set current server item and reload v2ray-core
-        let item = V2rayServer.loadSelectedItem()
-        if item != nil {
-            // parse json
-            v2rayConfig.parseJson(jsonText: item!.json)
-            // combine with new settings and save
-            _ = V2rayServer.save(idx: V2rayServer.getIndex(name: item!.name), isValid: v2rayConfig.isValid, jsonData: v2rayConfig.combineManual())
-            // restart service
-            menuController.startV2rayCore()
-            // todo reload configWindow
-        }
+        regenerateAllConfig()
 
         // set HttpServerPacPort
         HttpServerPacPort = pacPortVal
