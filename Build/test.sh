@@ -159,7 +159,8 @@ rm -fr ${DMG_FINAL} ${V2rayU_RELEASE}
 #updatePlistVersion
 downloadV2ray
 build
-createDmgByAppdmg
+createDmg
+#createDmgByAppdmg
 
 read -p "请输入版本描述: " release_note
 pushRelease ${release_note}
