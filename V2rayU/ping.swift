@@ -42,15 +42,17 @@ class PingSpeed: NSObject {
         var pingTip: String = ""
         if UserDefaults.getBool(forKey: .autoSelectFastestServer) {
             if langStr == "en" {
-                pingTip = "Ping Speed - In Testing(Choose fastest server)"
+                //pingTip = "Ping Speed Testing (Choose fastest server)"
+                pingTip = "Ping Speed Testing..."
             } else {
-                pingTip = "Ping Speed - 测试中(选择最快服务器)"
+                //pingTip = "Ping - 測試中 (自動選擇最優節點)"
+                pingTip = "Ping 延遲值 - 正在測試"
             }
         } else {
             if langStr == "en" {
-                pingTip = "Ping Speed - In Testing "
+                pingTip = "Ping Speed Testing..."
             } else {
-                pingTip = "Ping Speed - 测试中"
+                pingTip = "Ping 延遲值 - 正在測試"
             }
         }
         menuController.statusMenu.item(withTag: 1)?.title = pingTip

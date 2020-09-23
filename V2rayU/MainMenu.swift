@@ -210,7 +210,7 @@ class MenuController: NSObject, NSMenuDelegate {
     func setStatusOff() {
         v2rayStatusItem.title = "V2ray: Off" + ("  (v" + appVersion + ")")
         toggleV2rayItem.title = "Turn V2ray On"
-
+        
         if let button = statusItem.button {
             button.image = NSImage(named: NSImage.Name("IconOff"))
         }

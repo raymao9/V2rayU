@@ -92,9 +92,9 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GfP-Xl-Rdf">
-                    <rect key="frame" x="186" y="251" width="73" height="13"/>
+                    <rect key="frame" x="181" y="251" width="78" height="13"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Version 1.0" id="gsf-1V-bbM">
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Version 1.0.0.0" id="gsf-1V-bbM">
                         <font key="font" metaFont="system" size="10"/>
                         <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
