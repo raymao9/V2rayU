@@ -39,19 +39,6 @@
                         <action selector="start:" target="hcZ-V7-Dui" id="XIR-lL-vV2"/>
                     </connections>
                 </menuItem>
-                <menuItem isSeparatorItem="YES" id="K10-II-m5R"/>
-                <menuItem title="View config.json" id="b3o-tG-rp3">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="viewConfig:" target="hcZ-V7-Dui" id="wgb-Uh-Z1z"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="View Log" id="52m-v5-TzY">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="openLogs:" target="hcZ-V7-Dui" id="ebe-fD-cCz"/>
-                    </connections>
-                </menuItem>
                 <menuItem isSeparatorItem="YES" id="q2e-iz-ozm"/>
                 <menuItem title="Pac Mode" state="on" id="NrZ-oB-7yd">
                     <modifierMask key="keyEquivalentModifierMask"/>
@@ -123,6 +110,19 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="FfA-RW-Poe"/>
+                <menuItem title="View Log" id="52m-v5-TzY">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="openLogs:" target="hcZ-V7-Dui" id="ebe-fD-cCz"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="View config.json" id="b3o-tG-rp3">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="viewConfig:" target="hcZ-V7-Dui" id="wgb-Uh-Z1z"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="K10-II-m5R"/>
                 <menuItem title="Preferences..." keyEquivalent="," id="6jp-RJ-ww9" userLabel="Preference">
                     <connections>
                         <action selector="openPreferenceGeneral:" target="hcZ-V7-Dui" id="ak7-LN-QXy"/>

@@ -383,7 +383,7 @@ class MenuController: NSObject, NSMenuDelegate {
     }
 
     @IBAction func goHelp(_ sender: NSMenuItem) {
-        guard let url = URL(string: "https://github.com/yanue/v2rayu/wiki") else {
+        guard let url = URL(string: "https://linktofish.org/knowledgebase.php") else {
             return
         }
         NSWorkspace.shared.open(url)
