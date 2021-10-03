@@ -81,7 +81,7 @@
 "NrZ-oB-7yd.title" = "分流模式 - 被墙网站走代理";
 
 /* Class = "NSMenuItem"; title = "Ping Speed..."; ObjectID = "Ow7-xo-xhV"; */
-"Ow7-xo-xhV.title" = "测试全节点延迟 (Ping)";
+"Ow7-xo-xhV.title" = "ICMP Ping: 节点测速";
 
 /* Class = "NSMenuItem"; title = "V2ray-Core: On"; ObjectID = "P34-uO-Vwf"; */
 "P34-uO-Vwf.title" = "启动 V2ray";
@@ -199,3 +199,4 @@
 
 /* Class = "NSMenuItem"; title = "View config.json"; ObjectID = "b3o-tG-rp3"; */
 "b3o-tG-rp3.title" = "查看节点配置文件";
+

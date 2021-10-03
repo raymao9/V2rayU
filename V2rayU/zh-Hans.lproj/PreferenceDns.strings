@@ -3,10 +3,11 @@
 "6OV-Jq-2Ue.title" = "保存";
 
 /* Class = "NSTextFieldCell"; title = "V2ray Dns Json Text:"; ObjectID = "W0g-B7-neT"; */
-"W0g-B7-neT.title" = "V2ray Dns Json Text:";
+"W0g-B7-neT.title" = "V2ray DNS 配置 Json 文本：";
 
 /* Class = "NSButtonCell"; title = "view config"; ObjectID = "gZe-Sc-nCs"; */
 "gZe-Sc-nCs.title" = "查看当前配置";
 
 /* Class = "NSTextFieldCell"; title = "* Please input v2ray DnsObject  json text"; ObjectID = "yfy-JP-THq"; */
-"yfy-JP-THq.title" = "* 请输入 v2ray DnsObject Text (json)";
+"yfy-JP-THq.title" = "* 请输入 v2ray DnsObject json 格式文本";
+

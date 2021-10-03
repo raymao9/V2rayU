@@ -12,7 +12,7 @@ extension UserDefaults {
 
     enum KEY: String {
         // v2ray-core version
-        case v2rayCoreVersion
+        case xRayCoreVersion
         // v2ray server item list
         case v2rayServerList
         // v2ray subscribe item list
@@ -76,6 +76,7 @@ extension UserDefaults {
         case routingDirectIps
         case routingBlockDomains
         case routingBlockIps
+        case Exception
     }
 
     static func setBool(forKey key: KEY, value: Bool) {
@@ -151,8 +152,7 @@ extension String {
 
     //将原始的url编码为合法的url
     func urlEncoded() -> String {
-        let encodeUrlString = self.addingPercentEncoding(withAllowedCharacters:
-        .urlQueryAllowed)
+        let encodeUrlString = self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
         return encodeUrlString ?? self
     }
 
@@ -251,4 +251,21 @@ extension FileManager {
 
 func getAppVersion() -> String {
     return "\(Bundle.main.infoDictionary!["CFBundleShortVersionString"] ?? "")"
+}
+
+extension URL {
+    func queryParams() -> [String: Any] {
+        var dict = [String: Any]()
+
+        if let components = URLComponents(url: self, resolvingAgainstBaseURL: false) {
+            if let queryItems = components.queryItems {
+                for item in queryItems {
+                    dict[item.name] = item.value!
+                }
+            }
+            return dict
+        } else {
+            return [:]
+        }
+    }
 }

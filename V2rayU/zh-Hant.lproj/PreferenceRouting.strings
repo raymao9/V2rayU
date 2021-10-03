@@ -30,7 +30,7 @@
 "RSN-g5-vmP.title" = "load default";
 
 /* Class = "NSTextFieldCell"; title = "* Set the rules line by line: domain or ip"; ObjectID = "ccq-gn-C6Z"; */
-"ccq-gn-C6Z.title" = "* 請逐行輸入分流規則：每行一個網址（不含 http/https）或 IP";
+"ccq-gn-C6Z.title" = "請逐行輸入 IP/域名";
 
 /* Class = "NSTabViewItem"; label = "Block"; ObjectID = "nsT-BW-R2Z"; */
 "nsT-BW-R2Z.label" = "封鎖";
@@ -43,3 +43,4 @@
 
 /* Class = "NSMenuItem"; title = "Global"; ObjectID = "zLf-pT-xlm"; */
 "zLf-pT-xlm.title" = "全局";
+

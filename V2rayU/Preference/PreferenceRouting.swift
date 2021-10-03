@@ -12,7 +12,7 @@ import Preferences
 final class PreferenceRoutingViewController: NSViewController, PreferencePane {
 
     let preferencePaneIdentifier = PreferencePane.Identifier.routingTab
-    let preferencePaneTitle = "Routing"
+    let preferencePaneTitle = "路由"
     let toolbarItemIcon = NSImage(named: NSImage.networkName)!
 
     @IBOutlet weak var domainStrategy: NSPopUpButton!

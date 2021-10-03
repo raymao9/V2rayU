@@ -13,8 +13,8 @@ var inPing = false
 var fastV2rayName = ""
 var fastV2raySpeed = 5
 let pingJsonFileName = "ping.json"
-let pingJsonFilePath = AppResourcesPath + "/" + pingJsonFileName
-var task:Process?
+let pingJsonFilePath = AppHomePath + "/" + pingJsonFileName
+var task: Process?
 
 struct pingItem: Codable {
     var name: String = ""
@@ -24,7 +24,8 @@ struct pingItem: Codable {
 
 class PingSpeed: NSObject {
 
-    var pingServers: [pingItem] = []
+    var pingServers: [V2rayItem] = []
+    var serverLen : Int = 0
 
     func pingAll() {
         print("ping start")
@@ -32,150 +33,91 @@ class PingSpeed: NSObject {
             print("ping inPing")
             return
         }
-        // in ping
-        inPing = true
         fastV2rayName = ""
         self.pingServers = []
-
-        let normalTitle = menuController.statusMenu.item(withTag: 1)?.title ?? "Ping Speed..."
+        let itemList = V2rayServer.list()
+        if itemList.count == 0 {
+            return
+        }
         let langStr = Locale.current.languageCode
         var pingTip: String = ""
         if UserDefaults.getBool(forKey: .autoSelectFastestServer) {
             if langStr == "en" {
-                //pingTip = "Ping Speed Testing (Choose fastest server)"
-                pingTip = "Ping Speed Testing..."
+                pingTip = "Ping Speed: Testing"
             } else {
-                //pingTip = "Ping - 測試中 (自動選擇最優節點)"
-                pingTip = "Ping 延遲值 - 正在測試"
+                pingTip = "ICMP Ping: 正在測速..."
             }
         } else {
             if langStr == "en" {
-                pingTip = "Ping Speed Testing..."
+                pingTip = "ICMP Ping: Testing "
             } else {
-                pingTip = "Ping 延遲值 - 正在測試"
+                pingTip = "ICMP Ping: 正在測速..."
             }
         }
         menuController.statusMenu.item(withTag: 1)?.title = pingTip
-
-//        let queue = DispatchQueue.global()
-//        let queueInterval = DispatchQueue.global(qos: .userInitiated)
-//        let interval = DispatchWorkItem{
-//            print("ping terminate")
-//            task?.interrupt()
-//            task?.terminate()
-//        }
-        let queue = DispatchQueue(label: "pinger")
-
-        queue.async {
-
-//            self.writeServerToFile()
-//            self.pingInCmd()
-//            self.parsePingResult()
-
-//            print("ping finish")
-//            interval.cancel()
-
-            let itemList = V2rayServer.list()
-            if itemList.count == 0 {
-                return
-            }
-
-            for item in itemList {
-                if !item.isValid {
-                    continue
-                }
-                self.pingEachServer(item: item)
-            }
-
-            DispatchQueue.main.async {
-                menuController.statusMenu.item(withTag: 1)?.title = "\(normalTitle)"
-
-                // refresh servers
-                // reload
-                V2rayServer.loadConfig()
-
-                // if auto select fastest server
-                if UserDefaults.getBool(forKey: .autoSelectFastestServer) && fastV2rayName.count > 0 {
-                    if V2rayServer.getIndex(name: fastV2rayName) > -1 {
-                        // set current
-                        UserDefaults.set(forKey: .v2rayCurrentServerName, value: fastV2rayName)
-                        // if not stop status
-                        if UserDefaults.getBool(forKey: .v2rayTurnOn) {
-                            // stop first
-                            V2rayLaunch.Stop()
-                            // start
-                            menuController.startV2rayCore()
-                        }
-                    }
-                }
-
-                // refresh server
-                menuController.showServers()
-                // reload config
-                if menuController.configWindow != nil {
-                    menuController.configWindow.serversTableView.reloadData()
-                }
-                inPing = false
-            }
+        // in ping
+        inPing = true
+        self.serverLen = itemList.count
+        for item in itemList {
+            self.pingEachServer(item: item)
         }
     }
 
     func pingEachServer(item: V2rayItem) {
+        if !item.isValid {
+            self.pingServers.append(item)
+            return
+        }
         let host = self.parseHost(item: item)
         guard let _ = NSURL(string: host) else {
             print("not host", host)
             return
         }
-
+        // print("item", item.remark, host, item.url)
         // Ping once
-        let once = SwiftyPing(host: host, configuration: PingConfiguration(interval: 0.5, with: 5), queue: DispatchQueue.global())
-        once?.observer = { (_, response) in
-            let duration = response.duration
-            if response.error != nil {
-                print("ping error", host, response.error as Any)
-            } else {
-
+        var ping: SwiftyPing?
+        do {
+            ping = try SwiftyPing(host: host, configuration: PingConfiguration(interval: 1.0, with: 1), queue: DispatchQueue.global())
+            ping?.finished = { (result) in
+                DispatchQueue.main.async {
+                    var message = "\n--- \(host) ping statistics ---\n"
+                    message += "\(result.packetsTransmitted) transmitted, \(result.packetsReceived) received"
+                    if let loss = result.packetLoss {
+                        message += String(format: "\n%.1f%% packet loss\n", loss * 100)
+                    } else {
+                        message += "\n"
+                    }
+                    if let roundtrip = result.roundtrip {
+                        item.speed = String(format: "%d", Int(roundtrip.average * 1000)) + "ms"
+                        item.store()
+                        message += String(format: "round-trip min/avg/max/stddev = %.3f/%.3f/%.3f/%.3f ms", roundtrip.minimum * 1000, roundtrip.average * 1000, roundtrip.maximum * 1000, roundtrip.standardDeviation * 1000)
+                    }
+                    //print("finished",message)
+                    self.pingServers.append(item)
+                    self.refreshStatusMenu()
+                }
             }
-            item.speed = String(format: "%.2f", duration * 1000) + "ms"
-            item.store()
-            // refresh server
-            menuController.showServers()
-            once?.stop()
+            ping?.targetCount = 5
+            try ping?.startPinging()
+        } catch {
+            print("ping ",item.name,host,error.localizedDescription)
         }
-        once?.start()
     }
 
-    func writeServerToFile() {
-        let itemList = V2rayServer.list()
-        if itemList.count == 0 {
-            return
-        }
-
-        for item in itemList {
-            if !item.isValid {
-                continue
+    func refreshStatusMenu() {
+        if self.pingServers.count == self.serverLen {
+            inPing = false
+            menuController.statusMenu.item(withTag: 1)?.title = "ICMP Ping: 節點測速"
+            menuController.showServers()
+            // reload config
+            if menuController.configWindow != nil {
+                menuController.configWindow.serversTableView.reloadData()
             }
-
-            let host = self.parseHost(item: item)
-            guard let _ = NSURL(string: host) else {
-                continue
-            }
-
-            let tmp = pingItem(name: item.name, host: host, ping: item.speed)
-
-            self.pingServers.append(tmp)
         }
-
-        // 1. encode to json text
-        let encoder = JSONEncoder()
-        let data = try! encoder.encode(self.pingServers)
-        let jsonStr = String(data: data, encoding: .utf8)!
-
-        try! jsonStr.data(using: String.Encoding.utf8)?.write(to: URL(fileURLWithPath: pingJsonFilePath), options: .atomic)
     }
 
     func pingInCmd() {
-        let cmd = "cd " + AppResourcesPath + " && chmod +x ./V2rayUHelper && ./V2rayUHelper -cmd ping -t 5s -f ./" + pingJsonFileName
+        let cmd = "cd " + AppHomePath + " && chmod +x ./V2rayUHelper && ./V2rayUHelper -cmd ping -t 5s -f ./" + pingJsonFileName
         //        print("cmd", cmd)
         let res = runShell(launchPath: "/bin/bash", arguments: ["-c", cmd])
 
@@ -229,10 +171,20 @@ class PingSpeed: NSObject {
         if cfg.serverProtocol == V2rayProtocolOutbound.vmess.rawValue {
             host = cfg.serverVmess.address
             port = cfg.serverVmess.port
-        } else if cfg.serverProtocol == V2rayProtocolOutbound.shadowsocks.rawValue {
+        }
+        if cfg.serverProtocol == V2rayProtocolOutbound.vless.rawValue {
+            host = cfg.serverVless.address
+            port = cfg.serverVless.port
+        }
+        if cfg.serverProtocol == V2rayProtocolOutbound.shadowsocks.rawValue {
             host = cfg.serverShadowsocks.address
             port = cfg.serverShadowsocks.port
-        } else if cfg.serverProtocol == V2rayProtocolOutbound.socks.rawValue {
+        }
+        if cfg.serverProtocol == V2rayProtocolOutbound.trojan.rawValue {
+            host = cfg.serverTrojan.address
+            port = cfg.serverTrojan.port
+        }
+        if cfg.serverProtocol == V2rayProtocolOutbound.socks.rawValue {
             if cfg.serverSocks5.servers.count == 0 {
                 return ""
             }

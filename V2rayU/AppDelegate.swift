@@ -8,7 +8,6 @@
 
 import Cocoa
 import ServiceManagement
-import Swifter
 
 let launcherAppIdentifier = "net.yanue.V2rayU.Launcher"
 let appVersion = getAppVersion()
@@ -16,13 +15,44 @@ let appVersion = getAppVersion()
 let NOTIFY_TOGGLE_RUNNING_SHORTCUT = Notification.Name(rawValue: "NOTIFY_TOGGLE_RUNNING_SHORTCUT")
 let NOTIFY_SWITCH_PROXY_MODE_SHORTCUT = Notification.Name(rawValue: "NOTIFY_SWITCH_PROXY_MODE_SHORTCUT")
 
+func SignalHandler(signal: Int32) -> Void {
+    var mstr = String()
+    mstr += "Stack:\n"
+//    mstr = mstr.appendingFormat("slideAdress:0x%0x\r\n", calculate())
+    for symbol in Thread.callStackSymbols {
+        mstr = mstr.appendingFormat("%@\r\n", symbol)
+    }
+}
+
+func exceptionHandler(exception: NSException) {
+    print(exception)
+    print(exception.callStackSymbols)
+    let stack = exception.callStackReturnAddresses
+    print("Stack trace: \(stack)")
+    print("Error Handling: ", exception)
+    print("Error Handling callStackSymbols: ", exception.callStackSymbols)
+
+    UserDefaults.setArray(forKey: .Exception, value: exception.callStackSymbols)
+}
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
     // bar menu
     @IBOutlet weak var statusMenu: NSMenu!
 
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
+        // ERROR ExceptionHandler
+        if let exception = UserDefaults.getArray(forKey: .Exception) as? [String] {
+            print("Error was occured on previous session! \n", exception, "\n\n-------------------------")
+            var exceptions = ""
+            for e in exception {
+                exceptions = exceptions + e + "\n"
+            }
+            makeToast(message: exceptions)
+            UserDefaults.delArray(forKey: .Exception)
+        }
+        NSSetUncaughtExceptionHandler(exceptionHandler);
+
         // default settings
         self.checkDefault()
 
@@ -39,11 +69,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         // check v2ray core
-//        V2rayCore().check()
-        // generate plist
-        V2rayLaunch.generateLaunchAgentPlist()
+        V2rayCore().check()
+
         // auto check updates
         if UserDefaults.getBool(forKey: .autoCheckVersion) {
+            menuController.checkV2rayUVersion()
             // check version
             V2rayUpdater.checkForUpdatesInBackground()
         }
@@ -57,18 +87,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSWorkspace.shared.notificationCenter.addObserver(self, selector: #selector(onWakeNote(note:)), name: NSWorkspace.didWakeNotification, object: nil)
         // url scheme
         NSAppleEventManager.shared().setEventHandler(self, andSelector: #selector(self.handleAppleEvent(event:replyEvent:)), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
-
-        let path = Bundle.main.bundlePath
-        // /Users/yanue/Library/Developer/Xcode/DerivedData/V2rayU-cqwhqdwsnxsplqgolfwfywalmjps/Build/Products/Debug
-        // working dir must be: /Applications/V2rayU.app
-        NSLog(String.init(format: "working dir:%@", path))
-
-        if !(path.contains("Developer/Xcode") || path.contains("/Applications/V2rayU.app")) {
-            makeToast(message: "Please drag 'V2rayU' to '/Applications' directory", displayDuration: 5.0)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 5.5) {
-                NSApplication.shared.terminate(self)
-            }
-        }
 
         // set global hotkey
         let notifyCenter = NotificationCenter.default
@@ -87,8 +105,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func checkDefault() {
-        if UserDefaults.get(forKey: .v2rayCoreVersion) == nil {
-            UserDefaults.set(forKey: .v2rayCoreVersion, value: V2rayCore.version)
+        if UserDefaults.get(forKey: .xRayCoreVersion) == nil {
+            UserDefaults.set(forKey: .xRayCoreVersion, value: V2rayCore.version)
         }
         if UserDefaults.get(forKey: .autoCheckVersion) == nil {
             UserDefaults.setBool(forKey: .autoCheckVersion, value: true)
@@ -137,9 +155,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             V2rayLaunch.Start()
         }
         // check v2ray core
-//        V2rayCore().check()
+        V2rayCore().check()
         // auto check updates
         if UserDefaults.getBool(forKey: .autoCheckVersion) {
+            menuController.checkV2rayUVersion()
             // check version
             V2rayUpdater.checkForUpdatesInBackground()
         }
@@ -148,7 +167,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             V2raySubSync().sync()
         }
         // ping
-        PingSpeed().pingAll()
+//        PingSpeed().pingAll()
     }
 
     @objc func onSleepNote(note: NSNotification) {

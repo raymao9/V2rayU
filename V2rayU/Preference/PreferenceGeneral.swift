@@ -12,7 +12,7 @@ import ServiceManagement
 
 final class PreferenceGeneralViewController: NSViewController, PreferencePane {
     let preferencePaneIdentifier = PreferencePane.Identifier.generalTab
-    let preferencePaneTitle = "General"
+    let preferencePaneTitle = "一般"
     let toolbarItemIcon = NSImage(named: NSImage.preferencesGeneralName)!
 
     override var nibName: NSNib.Name? {

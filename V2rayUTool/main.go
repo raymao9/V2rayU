@@ -13,7 +13,7 @@ import (
 	"fmt"
 	"github.com/sparrc/go-ping"
 	"io/ioutil"
-	"net"
+/Users/nanamao/Projects/V2rayU_3.2.0.1/V2rayUTool/main.go	"net"
 	"os"
 	"sync"
 	"time"

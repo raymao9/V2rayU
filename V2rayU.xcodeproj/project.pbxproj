@@ -21,12 +21,12 @@
 		6618372E23E9BF74000F7410 /* ToastWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6618372C23E9BF73000F7410 /* ToastWindow.xib */; };
 		66193A8623EE45B200289B6A /* PreferenceRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66193A8523EE45B200289B6A /* PreferenceRouting.swift */; };
 		66193A8923EE46BC00289B6A /* PreferenceRouting.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66193A8723EE46BC00289B6A /* PreferenceRouting.xib */; };
+		663F040625ED4B2C00687600 /* V2rayLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663F040525ED4B2C00687600 /* V2rayLaunch.swift */; };
 		66406AF42183320000B56041 /* Sample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66406AF32183320000B56041 /* Sample.swift */; };
 		664EB375216C9A5E00B6AE0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664EB374216C9A5E00B6AE0D /* AppDelegate.swift */; };
 		664EB377216C9A5F00B6AE0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 664EB376216C9A5F00B6AE0D /* Assets.xcassets */; };
 		664EB392216CA9E800B6AE0D /* ConfigWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 664EB390216CA9E800B6AE0D /* ConfigWindow.swift */; };
 		6650AAAD21771E11000909D8 /* unzip.sh in Resources */ = {isa = PBXBuildFile; fileRef = 6650AAAC21771E11000909D8 /* unzip.sh */; };
-		6650AAB021774A72000909D8 /* V2rayLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6650AAAF21774A72000909D8 /* V2rayLaunch.swift */; };
 		6662C20B240EA782000AF6CD /* PreferenceDns.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6662C209240EA782000AF6CD /* PreferenceDns.xib */; };
 		667029CA21AF8E7A0079EF41 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 667029C921AF8E7A0079EF41 /* Sparkle.framework */; };
 		667029D321AFB86E0079EF41 /* QrcodeWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 667029D121AFB86E0079EF41 /* QrcodeWindow.xib */; };
@@ -34,6 +34,7 @@
 		66784B0021704E1300AD307F /* V2rayCore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66784AFF21704E1300AD307F /* V2rayCore.swift */; };
 		669312932413FC5E00C043F8 /* SwiftyPing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669312922413FC5E00C043F8 /* SwiftyPing.swift */; };
 		66973EB721797719001FEA1E /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66973EB621797719001FEA1E /* ServiceManagement.framework */; };
+		66A77BE3268225790097A126 /* v2ray-core in Resources */ = {isa = PBXBuildFile; fileRef = 66A77BE2268225790097A126 /* v2ray-core */; };
 		66ACB1A021757D5B005B5881 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66ACB19F21757D5B005B5881 /* MainMenu.swift */; };
 		66AD5335241497000070529C /* Shortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AD5330241496FF0070529C /* Shortcut.m */; };
 		66BC2B89228C589E00FBB716 /* V2raySubscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66BC2B88228C589E00FBB716 /* V2raySubscribe.swift */; };
@@ -41,14 +42,16 @@
 		66F07CF9236D79540088A4AE /* ping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F07CF8236D79540088A4AE /* ping.swift */; };
 		66F302A522AAA1D400FCA4E2 /* V2rayUTool in CopyFiles */ = {isa = PBXBuildFile; fileRef = 66F3029922AA9C0900FCA4E2 /* V2rayUTool */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		66F411B121CA49EE007AAC10 /* pac in Copy Files */ = {isa = PBXBuildFile; fileRef = 6683B1EA21C2AD1A004A1C5F /* pac */; };
-		66F411B221CA49F4007AAC10 /* v2ray-core in Copy Files */ = {isa = PBXBuildFile; fileRef = 667029CF21AFB5730079EF41 /* v2ray-core */; };
 		66F411B521CA8921007AAC10 /* cmd.sh in Resources */ = {isa = PBXBuildFile; fileRef = 66F411B421CA8921007AAC10 /* cmd.sh */; };
 		66FEAD53217EE14C009DECF9 /* ConfigWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 66FEAD4E217EE14C009DECF9 /* ConfigWindow.xib */; };
+		6D6DF0D1DC87F9423F490B31 /* install.sh in Resources */ = {isa = PBXBuildFile; fileRef = 6D6DF7F662C35646734A352E /* install.sh */; };
 		6D6DF2CF13D9FD3C7C6492A4 /* QrcodeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DF12EA09D2D80788666D0 /* QrcodeWindow.swift */; };
 		6D6DF2F2DFB2234541488BBD /* PreferenceSubscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DF5345E4582EE0EBD468D /* PreferenceSubscribe.swift */; };
+		6D6DF41FA8F7C7B020AC4115 /* Share.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DF79424C83391C205CB9C /* Share.swift */; };
 		6D6DF51271B1AF55EACC79F2 /* PreferenceSubscribe.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6D6DF0CCE47F1253DECD5855 /* PreferenceSubscribe.strings */; };
 		6D6DF6553CF221AEB71913EE /* PreferenceGeneral.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DFFB29020127E034AD168 /* PreferenceGeneral.swift */; };
-		6D6DF6F065067CD879201FF9 /* Scanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DF87840CDA04AF0E9D36E /* Scanner.swift */; };
+		6D6DF670FFB063EE2360776C /* Uri.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DF11F0983AFCBEF1E347B /* Uri.swift */; };
+		6D6DF6F065067CD879201FF9 /* Import.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DF87840CDA04AF0E9D36E /* Import.swift */; };
 		6D6DF807BE591BE396221EF3 /* PreferenceAdvance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DF701C75D8D416096D717 /* PreferenceAdvance.swift */; };
 		6D6DF87497313615AFE3320A /* PreferencePac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DF3151BBA6E56836AF6DE /* PreferencePac.swift */; };
 		6D6DF8BFC33F97E9AFCA5A4B /* V2rayConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D6DFD9F5991B38B128888D6 /* V2rayConfig.swift */; };
@@ -109,7 +112,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				66F411B221CA49F4007AAC10 /* v2ray-core in Copy Files */,
 				66F411B121CA49EE007AAC10 /* pac in Copy Files */,
 			);
 			name = "Copy Files";
@@ -139,6 +141,7 @@
 		66193A8523EE45B200289B6A /* PreferenceRouting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceRouting.swift; sourceTree = "<group>"; };
 		66193A8823EE46BC00289B6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = V2rayU/Base.lproj/PreferenceRouting.xib; sourceTree = SOURCE_ROOT; };
 		66193A9323EF1EF600289B6A /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "../zh-Hans.lproj/PreferenceRouting.strings"; sourceTree = "<group>"; };
+		663F040525ED4B2C00687600 /* V2rayLaunch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = V2rayLaunch.swift; sourceTree = "<group>"; };
 		66406AF32183320000B56041 /* Sample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sample.swift; sourceTree = "<group>"; };
 		6646669221CBC0860094F0B7 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		664666A021CBD6C60094F0B7 /* libPods-V2rayUTool.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-V2rayUTool.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -151,13 +154,11 @@
 		664EB390216CA9E800B6AE0D /* ConfigWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigWindow.swift; sourceTree = "<group>"; };
 		664FC05321A70C4300048FE3 /* build.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = build.plist; sourceTree = "<group>"; };
 		6650AAAC21771E11000909D8 /* unzip.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = unzip.sh; sourceTree = "<group>"; };
-		6650AAAF21774A72000909D8 /* V2rayLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V2rayLaunch.swift; sourceTree = "<group>"; };
 		6653C20422E0A2B700754D66 /* publish.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = publish.sh; sourceTree = "<group>"; };
 		665DC9BA22A542F90062337B /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		6662C20A240EA782000AF6CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = V2rayU/Base.lproj/PreferenceDns.xib; sourceTree = SOURCE_ROOT; };
 		6662C20C240EA794000AF6CD /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "../zh-Hans.lproj/PreferenceDns.strings"; sourceTree = "<group>"; };
 		667029C921AF8E7A0079EF41 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = "../../Downloads/Sparkle-1.21.0/Sparkle.framework"; sourceTree = "<group>"; };
-		667029CF21AFB5730079EF41 /* v2ray-core */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "v2ray-core"; path = "Build/v2ray-core"; sourceTree = "<group>"; };
 		667029D221AFB86E0079EF41 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/QrcodeWindow.xib; sourceTree = "<group>"; };
 		66784AFB2170486D00AD307F /* Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		66784AFF21704E1300AD307F /* V2rayCore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V2rayCore.swift; sourceTree = "<group>"; };
@@ -165,11 +166,13 @@
 		669312922413FC5E00C043F8 /* SwiftyPing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftyPing.swift; sourceTree = "<group>"; };
 		66973EB621797719001FEA1E /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
 		66A5CE4521706B5A009B08B2 /* Pods_V2rayU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_V2rayU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		66A77BE2268225790097A126 /* v2ray-core */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "v2ray-core"; path = "Build/v2ray-core"; sourceTree = "<group>"; };
 		66ACB19F21757D5B005B5881 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		66AD532E241496FE0070529C /* Shortcut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shortcut.h; sourceTree = "<group>"; };
 		66AD5330241496FF0070529C /* Shortcut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shortcut.m; sourceTree = "<group>"; };
 		66AD5333241496FF0070529C /* V2rayU-Bridging-header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "V2rayU-Bridging-header.h"; sourceTree = "<group>"; };
 		66BC2B88228C589E00FBB716 /* V2raySubscribe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = V2raySubscribe.swift; sourceTree = "<group>"; };
+		66C5B194240B58B8008A22CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = ../en.lproj/PreferenceAdvance.strings; sourceTree = "<group>"; };
 		66C5B197240C17F2008A22CA /* main.go */ = {isa = PBXFileReference; lastKnownFileType = text; path = main.go; sourceTree = "<group>"; };
 		66C5B19A240D3476008A22CA /* V2rayUHelper */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = V2rayUHelper; sourceTree = "<group>"; };
 		66F07CF8236D79540088A4AE /* ping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ping.swift; sourceTree = "<group>"; };
@@ -187,6 +190,7 @@
 		66FEAD45217D75FC009DECF9 /* release.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = release.sh; sourceTree = "<group>"; };
 		66FEAD4F217EE14C009DECF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ConfigWindow.xib; sourceTree = "<group>"; };
 		6D6DF085C3C411989C416D0D /* user-rule.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "user-rule.txt"; sourceTree = "<group>"; };
+		6D6DF11F0983AFCBEF1E347B /* Uri.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Uri.swift; sourceTree = "<group>"; };
 		6D6DF12EA09D2D80788666D0 /* QrcodeWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QrcodeWindow.swift; sourceTree = "<group>"; };
 		6D6DF181C5D472DBBB71B72A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = V2rayU/Base.lproj/PreferencePac.xib; sourceTree = SOURCE_ROOT; };
 		6D6DF3151BBA6E56836AF6DE /* PreferencePac.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencePac.swift; sourceTree = "<group>"; };
@@ -195,9 +199,11 @@
 		6D6DF5345E4582EE0EBD468D /* PreferenceSubscribe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceSubscribe.swift; sourceTree = "<group>"; };
 		6D6DF69C7CA7EBEFFE8E22D1 /* abp.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = abp.js; sourceTree = "<group>"; };
 		6D6DF701C75D8D416096D717 /* PreferenceAdvance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceAdvance.swift; sourceTree = "<group>"; };
+		6D6DF79424C83391C205CB9C /* Share.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Share.swift; sourceTree = "<group>"; };
+		6D6DF7F662C35646734A352E /* install.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = install.sh; sourceTree = "<group>"; };
 		6D6DF81E59907A2C7579BFE2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = V2rayU/Base.lproj/PreferenceGeneral.xib; sourceTree = SOURCE_ROOT; };
 		6D6DF870C8E334815FBA78B2 /* PreferenceAbout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceAbout.swift; sourceTree = "<group>"; };
-		6D6DF87840CDA04AF0E9D36E /* Scanner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scanner.swift; sourceTree = "<group>"; };
+		6D6DF87840CDA04AF0E9D36E /* Import.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Import.swift; sourceTree = "<group>"; };
 		6D6DF8F5112A8407EE959998 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = file.gitignore; path = .gitignore; sourceTree = "<group>"; };
 		6D6DF927AC79EEF7378C192A /* appdmg.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = appdmg.json; sourceTree = "<group>"; };
 		6D6DFD730D8572B1FCAB1FFE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = V2rayU/Base.lproj/PreferenceSubscribe.xib; sourceTree = SOURCE_ROOT; };
@@ -206,17 +212,18 @@
 		6D6DFEB25B88118513B9F581 /* PreferenceDns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceDns.swift; sourceTree = "<group>"; };
 		6D6DFFB0110E2442FC8337A5 /* format.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = format.js; sourceTree = "<group>"; };
 		6D6DFFB29020127E034AD168 /* PreferenceGeneral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferenceGeneral.swift; sourceTree = "<group>"; };
-		7A0E35E425179013009B5BDF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/MainMenu.strings"; sourceTree = "<group>"; };
-		7A0E35E525179013009B5BDF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/ConfigWindow.strings"; sourceTree = "<group>"; };
-		7A0E35E625179013009B5BDF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/QrcodeWindow.strings"; sourceTree = "<group>"; };
-		7A0E35E725179013009B5BDF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "../zh-Hant.lproj/PreferenceAbout.strings"; sourceTree = "<group>"; };
-		7A0E35E825179013009B5BDF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "../zh-Hant.lproj/PreferenceAdvance.strings"; sourceTree = "<group>"; };
-		7A0E35E925179013009B5BDF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "../zh-Hant.lproj/PreferenceGeneral.strings"; sourceTree = "<group>"; };
-		7A0E35EA25179013009B5BDF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "../zh-Hant.lproj/PreferencePac.strings"; sourceTree = "<group>"; };
-		7A0E35EB25179013009B5BDF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "../zh-Hant.lproj/PreferenceSubscribe.strings"; sourceTree = "<group>"; };
-		7A0E35EC25179013009B5BDF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "../zh-Hant.lproj/PreferenceRouting.strings"; sourceTree = "<group>"; };
-		7A0E35ED25179013009B5BDF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "../zh-Hant.lproj/PreferenceDns.strings"; sourceTree = "<group>"; };
-		7A0E35EF25179013009B5BDF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		7A03CC8127071ACE008D876A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/MainMenu.strings"; sourceTree = "<group>"; };
+		7A03CC8227071ACE008D876A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/ConfigWindow.strings"; sourceTree = "<group>"; };
+		7A03CC8327071ACE008D876A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/QrcodeWindow.strings"; sourceTree = "<group>"; };
+		7A03CC8427071ACE008D876A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "../zh-Hant.lproj/PreferenceAbout.strings"; sourceTree = "<group>"; };
+		7A03CC8527071ACE008D876A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "../zh-Hant.lproj/PreferenceAdvance.strings"; sourceTree = "<group>"; };
+		7A03CC8627071ACE008D876A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "../zh-Hant.lproj/PreferenceGeneral.strings"; sourceTree = "<group>"; };
+		7A03CC8727071ACE008D876A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "../zh-Hant.lproj/PreferencePac.strings"; sourceTree = "<group>"; };
+		7A03CC8827071ACE008D876A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "../zh-Hant.lproj/PreferenceSubscribe.strings"; sourceTree = "<group>"; };
+		7A03CC8927071ACE008D876A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "../zh-Hant.lproj/PreferenceRouting.strings"; sourceTree = "<group>"; };
+		7A03CC8A27071ACE008D876A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "../zh-Hant.lproj/PreferenceDns.strings"; sourceTree = "<group>"; };
+		7A03CC8B27071ACE008D876A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/ToastWindow.strings"; sourceTree = "<group>"; };
+		7A03CC8C27071ACE008D876A /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		8E15DFCD449143CCC309A1A0 /* Pods-V2rayU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-V2rayU.debug.xcconfig"; path = "Pods/Target Support Files/Pods-V2rayU/Pods-V2rayU.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -300,9 +307,9 @@
 		664EB368216C9A5E00B6AE0D = {
 			isa = PBXGroup;
 			children = (
+				66A77BE2268225790097A126 /* v2ray-core */,
 				66AD532D241496EF0070529C /* Common */,
 				6683B1EA21C2AD1A004A1C5F /* pac */,
-				667029CF21AFB5730079EF41 /* v2ray-core */,
 				66FEAD44217D75D7009DECF9 /* Build */,
 				664EB373216C9A5E00B6AE0D /* V2rayU */,
 				660C8CA02181CBAA00896361 /* V2rayUTests */,
@@ -329,7 +336,6 @@
 		664EB373216C9A5E00B6AE0D /* V2rayU */ = {
 			isa = PBXGroup;
 			children = (
-				669312912413E3A000C043F8 /* trojan */,
 				66F07CF8236D79540088A4AE /* ping.swift */,
 				66F411B421CA8921007AAC10 /* cmd.sh */,
 				6608D9B82182BBAC00A0E0DD /* v2ray */,
@@ -341,11 +347,11 @@
 				66FEAD4E217EE14C009DECF9 /* ConfigWindow.xib */,
 				660D0E59216E0158000C2922 /* V2rayServer.swift */,
 				66784AFF21704E1300AD307F /* V2rayCore.swift */,
-				6650AAAF21774A72000909D8 /* V2rayLaunch.swift */,
+				663F040525ED4B2C00687600 /* V2rayLaunch.swift */,
 				66BC2B88228C589E00FBB716 /* V2raySubscribe.swift */,
 				66784AFB2170486D00AD307F /* Util.swift */,
 				6650AAAC21771E11000909D8 /* unzip.sh */,
-				6D6DF87840CDA04AF0E9D36E /* Scanner.swift */,
+				6D6DF87840CDA04AF0E9D36E /* Import.swift */,
 				664EB37B216C9A5F00B6AE0D /* Info.plist */,
 				667029D121AFB86E0079EF41 /* QrcodeWindow.xib */,
 				6D6DF12EA09D2D80788666D0 /* QrcodeWindow.swift */,
@@ -353,15 +359,11 @@
 				6618372823E9BF1A000F7410 /* ToastWindow.swift */,
 				6618372C23E9BF73000F7410 /* ToastWindow.xib */,
 				66107B8822DEDBE4002FFB60 /* Localizable.strings */,
+				6D6DF7F662C35646734A352E /* install.sh */,
+				6D6DF11F0983AFCBEF1E347B /* Uri.swift */,
+				6D6DF79424C83391C205CB9C /* Share.swift */,
 			);
 			path = V2rayU;
-			sourceTree = "<group>";
-		};
-		669312912413E3A000C043F8 /* trojan */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = trojan;
 			sourceTree = "<group>";
 		};
 		66AD532D241496EF0070529C /* Common */ = {
@@ -596,6 +598,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66A77BE3268225790097A126 /* v2ray-core in Resources */,
 				667029D321AFB86E0079EF41 /* QrcodeWindow.xib in Resources */,
 				6662C20B240EA782000AF6CD /* PreferenceDns.xib in Resources */,
 				6650AAAD21771E11000909D8 /* unzip.sh in Resources */,
@@ -611,6 +614,7 @@
 				6D6DFFD18860EBE148F6DF1F /* PreferencePac.strings in Resources */,
 				66193A8923EE46BC00289B6A /* PreferenceRouting.xib in Resources */,
 				6D6DF51271B1AF55EACC79F2 /* PreferenceSubscribe.strings in Resources */,
+				6D6DF0D1DC87F9423F490B31 /* install.sh in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -681,9 +685,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				664EB375216C9A5E00B6AE0D /* AppDelegate.swift in Sources */,
-				6650AAB021774A72000909D8 /* V2rayLaunch.swift in Sources */,
 				66ACB1A021757D5B005B5881 /* MainMenu.swift in Sources */,
 				66AD5335241497000070529C /* Shortcut.m in Sources */,
+				663F040625ED4B2C00687600 /* V2rayLaunch.swift in Sources */,
 				6608D9E22182C9C100A0E0DD /* v2rayStream.swift in Sources */,
 				66784AFC2170486D00AD307F /* Util.swift in Sources */,
 				660D0E5A216E0158000C2922 /* V2rayServer.swift in Sources */,
@@ -697,7 +701,7 @@
 				66784B0021704E1300AD307F /* V2rayCore.swift in Sources */,
 				66193A8623EE45B200289B6A /* PreferenceRouting.swift in Sources */,
 				6D6DF8BFC33F97E9AFCA5A4B /* V2rayConfig.swift in Sources */,
-				6D6DF6F065067CD879201FF9 /* Scanner.swift in Sources */,
+				6D6DF6F065067CD879201FF9 /* Import.swift in Sources */,
 				6D6DF2CF13D9FD3C7C6492A4 /* QrcodeWindow.swift in Sources */,
 				6D6DF93B58B654D86ACC490E /* PreferenceAbout.swift in Sources */,
 				6D6DF87497313615AFE3320A /* PreferencePac.swift in Sources */,
@@ -706,6 +710,8 @@
 				66BC2B89228C589E00FBB716 /* V2raySubscribe.swift in Sources */,
 				6D6DF807BE591BE396221EF3 /* PreferenceAdvance.swift in Sources */,
 				6D6DFC1D9432F2A60D2156E2 /* PreferenceDns.swift in Sources */,
+				6D6DF670FFB063EE2360776C /* Uri.swift in Sources */,
+				6D6DF41FA8F7C7B020AC4115 /* Share.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -732,7 +738,7 @@
 			children = (
 				66107B8722DEDBE4002FFB60 /* zh-Hans */,
 				66107B8922DEE445002FFB60 /* en */,
-				7A0E35EF25179013009B5BDF /* zh-Hant */,
+				7A03CC8C27071ACE008D876A /* zh-Hant */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -741,6 +747,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				6618372D23E9BF73000F7410 /* Base */,
+				7A03CC8B27071ACE008D876A /* zh-Hant */,
 			);
 			name = ToastWindow.xib;
 			sourceTree = "<group>";
@@ -750,7 +757,7 @@
 			children = (
 				66193A8823EE46BC00289B6A /* Base */,
 				66193A9323EF1EF600289B6A /* zh-Hans */,
-				7A0E35EC25179013009B5BDF /* zh-Hant */,
+				7A03CC8927071ACE008D876A /* zh-Hant */,
 			);
 			name = PreferenceRouting.xib;
 			sourceTree = "<group>";
@@ -760,7 +767,7 @@
 			children = (
 				664EB379216C9A5F00B6AE0D /* Base */,
 				66F3029C22AAA0A600FCA4E2 /* zh-Hans */,
-				7A0E35E425179013009B5BDF /* zh-Hant */,
+				7A03CC8127071ACE008D876A /* zh-Hant */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -770,7 +777,7 @@
 			children = (
 				6662C20A240EA782000AF6CD /* Base */,
 				6662C20C240EA794000AF6CD /* zh-Hans */,
-				7A0E35ED25179013009B5BDF /* zh-Hant */,
+				7A03CC8A27071ACE008D876A /* zh-Hant */,
 			);
 			name = PreferenceDns.xib;
 			sourceTree = "<group>";
@@ -780,7 +787,7 @@
 			children = (
 				667029D221AFB86E0079EF41 /* Base */,
 				66F3029E22AAA0A600FCA4E2 /* zh-Hans */,
-				7A0E35E625179013009B5BDF /* zh-Hant */,
+				7A03CC8327071ACE008D876A /* zh-Hant */,
 			);
 			name = QrcodeWindow.xib;
 			sourceTree = "<group>";
@@ -790,7 +797,7 @@
 			children = (
 				66FEAD4F217EE14C009DECF9 /* Base */,
 				66F3029D22AAA0A600FCA4E2 /* zh-Hans */,
-				7A0E35E525179013009B5BDF /* zh-Hant */,
+				7A03CC8227071ACE008D876A /* zh-Hant */,
 			);
 			name = ConfigWindow.xib;
 			sourceTree = "<group>";
@@ -800,7 +807,7 @@
 			children = (
 				6D6DFD730D8572B1FCAB1FFE /* Base */,
 				66F302A322AAA0A700FCA4E2 /* zh-Hans */,
-				7A0E35EB25179013009B5BDF /* zh-Hant */,
+				7A03CC8827071ACE008D876A /* zh-Hant */,
 			);
 			name = PreferenceSubscribe.strings;
 			sourceTree = "<group>";
@@ -810,7 +817,8 @@
 			children = (
 				6D6DFE1CDFAD9828F2FDE1A5 /* Base */,
 				66F302A022AAA0A600FCA4E2 /* zh-Hans */,
-				7A0E35E825179013009B5BDF /* zh-Hant */,
+				66C5B194240B58B8008A22CA /* en */,
+				7A03CC8527071ACE008D876A /* zh-Hant */,
 			);
 			name = PreferenceAdvance.strings;
 			sourceTree = "<group>";
@@ -820,7 +828,7 @@
 			children = (
 				6D6DF3A2857899778B719CE1 /* Base */,
 				66F3029F22AAA0A600FCA4E2 /* zh-Hans */,
-				7A0E35E725179013009B5BDF /* zh-Hant */,
+				7A03CC8427071ACE008D876A /* zh-Hant */,
 			);
 			name = PreferenceAbout.strings;
 			sourceTree = "<group>";
@@ -830,7 +838,7 @@
 			children = (
 				6D6DF81E59907A2C7579BFE2 /* Base */,
 				66F302A122AAA0A600FCA4E2 /* zh-Hans */,
-				7A0E35E925179013009B5BDF /* zh-Hant */,
+				7A03CC8627071ACE008D876A /* zh-Hant */,
 			);
 			name = PreferenceGeneral.strings;
 			sourceTree = "<group>";
@@ -840,7 +848,7 @@
 			children = (
 				6D6DF181C5D472DBBB71B72A /* Base */,
 				66F302A222AAA0A700FCA4E2 /* zh-Hans */,
-				7A0E35EA25179013009B5BDF /* zh-Hant */,
+				7A03CC8727071ACE008D876A /* zh-Hant */,
 			);
 			name = PreferencePac.strings;
 			sourceTree = "<group>";
@@ -854,7 +862,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = V2rayULauncher/V2rayULauncher.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 65U8UBXA46;
 				INFOPLIST_FILE = V2rayULauncher/Info.plist;
@@ -865,7 +873,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = net.yanue.v2rayu.V2rayULauncher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 			};
@@ -877,7 +884,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = V2rayULauncher/V2rayULauncher.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 65U8UBXA46;
 				INFOPLIST_FILE = V2rayULauncher/Info.plist;
@@ -888,7 +895,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = net.yanue.v2rayu.V2rayULauncher;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 			};
@@ -899,7 +905,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 65U8UBXA46;
 				INFOPLIST_FILE = V2rayUTests/Info.plist;
@@ -911,7 +917,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = net.yanue.v2rayu.V2rayUTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/V2rayU.app/Contents/MacOS/V2rayU";
 			};
@@ -922,7 +927,7 @@
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 65U8UBXA46;
 				INFOPLIST_FILE = V2rayUTests/Info.plist;
@@ -934,7 +939,6 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = net.yanue.v2rayu.V2rayUTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/V2rayU.app/Contents/MacOS/V2rayU";
 			};
@@ -974,7 +978,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Apple Development: id@mail.rayfish.app (9DULH498FT)";
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1039,7 +1043,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "Apple Development: id@mail.rayfish.app (9DULH498FT)";
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -1068,11 +1072,11 @@
 			baseConfigurationReference = 8E15DFCD449143CCC309A1A0 /* Pods-V2rayU.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2.3.0.1;
+				CURRENT_PROJECT_VERSION = 3.2.0.1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 65U8UBXA46;
 				ENABLE_ONLY_ACTIVE_RESOURCES = YES;
@@ -1082,7 +1086,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 2.3.0.1;
+				MARKETING_VERSION = 3.2.0.1;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = net.yanue.V2rayU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1099,11 +1103,11 @@
 			baseConfigurationReference = 29B27CD97A6B24986CAF0BFD /* Pods-V2rayU.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2.3.0.1;
+				CURRENT_PROJECT_VERSION = 3.2.0.1;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 65U8UBXA46;
 				ENABLE_ONLY_ACTIVE_RESOURCES = YES;
@@ -1113,7 +1117,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
-				MARKETING_VERSION = 2.3.0.1;
+				MARKETING_VERSION = 3.2.0.1;
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = net.yanue.V2rayU;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1129,11 +1133,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 65U8UBXA46;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -1142,11 +1145,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 65U8UBXA46;
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;

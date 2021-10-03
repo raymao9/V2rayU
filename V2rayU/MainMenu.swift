@@ -10,6 +10,7 @@ import Cocoa
 import ServiceManagement
 import Preferences
 import Sparkle
+import Alamofire
 
 let menuController = (NSApplication.shared.delegate as? AppDelegate)?.statusMenu.delegate as! MenuController
 let V2rayUpdater = SUUpdater()
@@ -134,13 +135,17 @@ class MenuController: NSObject, NSMenuDelegate {
     @IBOutlet weak var toggleV2rayItem: NSMenuItem!
     @IBOutlet weak var v2rayStatusItem: NSMenuItem!
     @IBOutlet weak var serverItems: NSMenuItem!
+    @IBOutlet weak var newVersionItem: NSMenuItem!
 
     // when menu.xib loaded
     override func awakeFromNib() {
+        newVersionItem.isHidden = true
+
+        // install before launch
+        V2rayLaunch.install()
+
         // windowWillClose Notification
         NotificationCenter.default.addObserver(self, selector: #selector(configWindowWillClose(notification:)), name: NSWindow.willCloseNotification, object: nil)
-
-        V2rayLaunch.chmodCmdPermission()
 
         // backup system proxy when init
         V2rayLaunch.setSystemProxy(mode: .backup)
@@ -210,7 +215,7 @@ class MenuController: NSObject, NSMenuDelegate {
     func setStatusOff() {
         v2rayStatusItem.title = "V2ray: Off" + ("  (v" + appVersion + ")")
         toggleV2rayItem.title = "Turn V2ray On"
-        
+
         if let button = statusItem.button {
             button.image = NSImage(named: NSImage.Name("IconOff"))
         }
@@ -406,7 +411,7 @@ class MenuController: NSObject, NSMenuDelegate {
             let totalSpaceCnt = 10
             var spaceCnt = totalSpaceCnt - ping.count
             // littleSpace: 1,.
-            if ping.contains(".") || ping.contains("1"){
+            if ping.contains(".") || ping.contains("1") {
                 let littleSpaceCount = ping.filter({ $0 == "." }).count + ping.filter({ $0 == "1" }).count
                 spaceCnt = totalSpaceCnt - ((ping.count - littleSpaceCount) + Int((ping.count - littleSpaceCount)/2))
             }
@@ -496,6 +501,7 @@ class MenuController: NSObject, NSMenuDelegate {
     }
 
     @IBAction func checkForUpdate(_ sender: NSMenuItem) {
+        menuController.checkV2rayUVersion()
         // need set SUFeedURL into plist
         V2rayUpdater.checkForUpdates(sender)
     }
@@ -531,9 +537,10 @@ class MenuController: NSObject, NSMenuDelegate {
     @IBAction func copyExportCommand(_ sender: NSMenuItem) {
         // Get the Http proxy config.
         let httpPort = UserDefaults.get(forKey: .localHttpPort) ?? "1087"
+        let sockPort = UserDefaults.get(forKey: .localSockPort) ?? "1080"
 
         // Format an export string.
-        let command = "export http_proxy=http://127.0.0.1:\(httpPort);export https_proxy=http://127.0.0.1:\(httpPort);"
+        let command = "export http_proxy=http://127.0.0.1:\(httpPort);export https_proxy=http://127.0.0.1:\(httpPort);export ALL_PROXY=socks5://127.0.0.1:\(sockPort)"
 
         // Copy to paste board.
         NSPasteboard.general.clearContents()
@@ -556,7 +563,7 @@ class MenuController: NSObject, NSMenuDelegate {
         if let uri = NSPasteboard.general.string(forType: .string), uri.count > 0 {
             self.importUri(url: uri)
         } else {
-            noticeTip(title: "import server fail", subtitle: "", informativeText: "no found ss:// , ssr:// or vmess:// from Pasteboard")
+            noticeTip(title: "import server fail", subtitle: "", informativeText: "no found vmess:// or vless:// or trojan:// or ss:// from Pasteboard")
         }
     }
 
@@ -586,7 +593,7 @@ class MenuController: NSObject, NSMenuDelegate {
             // ss://YWVzLTI1Ni1jZmI6ZUlXMERuazY5NDU0ZTZuU3d1c3B2OURtUzIwMXRRMERAMTcyLjEwNS43MS44Mjo4MDk5#翻墙党325.06美国 类型这种含中文的格式不是标准的URL格式
 //            if URL(string: uri) == nil {
             if !ImportUri.supportProtocol(uri: uri) {
-                noticeTip(title: "import server fail", subtitle: "", informativeText: "no found ss:// , ssr:// or vmess://")
+                noticeTip(title: "import server fail", subtitle: "", informativeText: "no found vmess:// or vless:// or trojan:// or ss:// ")
                 continue
             }
 
@@ -595,7 +602,7 @@ class MenuController: NSObject, NSMenuDelegate {
                 continue
             }
 
-            noticeTip(title: "import server fail", subtitle: "", informativeText: "no found ss:// , ssr:// or vmess://")
+            noticeTip(title: "import server fail", subtitle: "", informativeText: "no found vmess:// or vless:// or trojan:// or ss:// ")
         }
     }
 
@@ -619,5 +626,62 @@ class MenuController: NSObject, NSMenuDelegate {
 
     func noticeTip(title: String = "", subtitle: String = "", informativeText: String = "") {
         makeToast(message: title + (subtitle.count > 0 ? " - " + subtitle : "") + " : " + informativeText)
+    }
+
+    @IBAction func goRelease(_ sender: Any) {
+        guard let url = URL(string: "https://github.com/yanue/v2rayu/releases") else {
+            return
+        }
+        NSWorkspace.shared.open(url)
+    }
+
+    func checkV2rayUVersion() {
+        // 当前版本检测
+        Alamofire.request("https://api.github.com/repos/yanue/V2rayU/releases/latest").responseJSON { [self] response in
+            //to get status code
+            if let status = response.response?.statusCode {
+                if status != 200 {
+                    NSLog("error with response status: ", status)
+                    return
+                }
+            }
+
+            //to get JSON return value
+            if let result = response.result.value {
+                let JSON = result as! NSDictionary
+
+                // get tag_name (verion)
+                guard let tag_name = JSON["tag_name"] else {
+                    NSLog("error: no tag_name")
+                    return
+                }
+
+                // get prerelease and draft
+                guard let prerelease = JSON["prerelease"], let draft = JSON["draft"] else {
+                    // get
+                    NSLog("error: get prerelease or draft")
+                    return
+                }
+
+                // not pre release or draft
+                if prerelease as! Bool == true || draft as! Bool == true {
+                    NSLog("this release is a prerelease or draft")
+                    return
+                }
+
+                let newVer = (tag_name as! String)
+                // get old versiion
+                let oldVer = appVersion.replacingOccurrences(of: "v", with: "").versionToInt()
+                let curVer = newVer.replacingOccurrences(of: "v", with: "").versionToInt()
+
+                // compare with [Int]
+                if oldVer.lexicographicallyPrecedes(curVer) {
+                    self.newVersionItem.isHidden = false
+                    self.newVersionItem.title = "has new version " + newVer
+                } else {
+                    self.newVersionItem.isHidden = true
+                }
+            }
+        }
     }
 }

@@ -2,7 +2,7 @@
   "title": "V2rayU Installer",
   "icon": "V2rayU.icns",
   "icon-size": 80,
-  "background": "dmg-bg@2x.png",
+  "background": "V2rayU-dmg@2x.png",
   "window": {
     "size": {
       "width": 500,
@@ -20,7 +20,7 @@
       "x": 120,
       "y": 120,
       "type": "file",
-      "path": "Release/V2rayU.app"
+      "path": "release/V2rayU.app"
     }
   ]
 }

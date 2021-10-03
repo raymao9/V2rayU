@@ -81,7 +81,7 @@
 "NrZ-oB-7yd.title" = "分流模式 - 僅代理被封鎖網站";
 
 /* Class = "NSMenuItem"; title = "Ping Speed..."; ObjectID = "Ow7-xo-xhV"; */
-"Ow7-xo-xhV.title" = "測試全節點延遲 (Ping)";
+"Ow7-xo-xhV.title" = "ICMP Ping: 節點測速";
 
 /* Class = "NSMenuItem"; title = "V2ray-Core: On"; ObjectID = "P34-uO-Vwf"; */
 "P34-uO-Vwf.title" = "V2ray: 已啟動";

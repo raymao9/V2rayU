@@ -3,7 +3,7 @@
 "09i-pj-m0K.title" = "V2rayU";
 
 /* Class = "NSTextFieldCell"; title = "based on v2ray-core v4.21.3"; ObjectID = "8bU-0Q-dTD"; */
-"8bU-0Q-dTD.title" = "based on v2ray-core v4.28";
+"8bU-0Q-dTD.title" = "based on Xray-core v1.4.2";
 
 /* Class = "NSTextFieldCell"; title = "tech@linktofish.org"; ObjectID = "Guc-nt-FeY"; */
 "Guc-nt-FeY.title" = "tech@linktofish.org";
@@ -21,10 +21,10 @@
 "Sw8-ch-1M9.title" = "github.com/v2ray";
 
 /* Class = "NSTextFieldCell"; title = "Copyright © 2019 yanue.net"; ObjectID = "bCA-au-e3o"; */
-"bCA-au-e3o.title" = "Copyright © 2020 yanue";
+"bCA-au-e3o.title" = "Copyright © 2019 yanue.net";
 
 /* Class = "NSTextFieldCell"; title = "Version 1.0"; ObjectID = "gsf-1V-bbM"; */
-"gsf-1V-bbM.title" = "Version 2.3.0.1";
+"gsf-1V-bbM.title" = "Version 3.2.0.1";
 
 /* Class = "NSTextFieldCell"; title = "🔗"; ObjectID = "rUl-Lc-b4S"; */
 "rUl-Lc-b4S.title" = "🔗";

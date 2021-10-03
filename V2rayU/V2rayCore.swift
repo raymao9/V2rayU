@@ -11,11 +11,12 @@ import SwiftyJSON
 
 // v2ray-core version check, download, unzip
 class V2rayCore {
-    static let version = "v4.28.2"
+    static let version = "v1.4.2"
     // need replace ${version}
-    var releaseUrl: String = "https://github.com/v2ray/v2ray-core/releases/download/${version}/v2ray-macos-64.zip"
-    // lastet release verison info
-    let versionUrl: String = "https://api.github.com/repos/v2ray/v2ray-core/releases/latest"
+    //  "https://github.com/XTLS/Xray-core/releases/download/v1.4.2/Xray-macos-64.zip"
+    var releaseUrl: String = "https://github.com/XTLS/Xray-core/releases/download/${version}/Xray-macos-64.zip"
+    // last release version info
+    let versionUrl: String = "https://api.github.com/repos/XTLS/Xray-core/releases/latest"
 
     func checkLocal(hasNewVersion: Bool) {
         // has new verion
@@ -33,7 +34,8 @@ class V2rayCore {
 
     func check() {
         // 当前版本检测
-        let oldVersion = UserDefaults.get(forKey: .v2rayCoreVersion) ?? V2rayCore.version
+        let oldVersion = UserDefaults.get(forKey: .xRayCoreVersion) ?? V2rayCore.version
+        NSLog("check version", oldVersion)
 
         Alamofire.request(versionUrl).responseJSON { response in
             var hasNewVersion = false
@@ -83,7 +85,7 @@ class V2rayCore {
                 // compare with [Int]
                 if oldVer.lexicographicallyPrecedes(curVer) {
                     // store this version
-                    UserDefaults.set(forKey: .v2rayCoreVersion, value: newVersion)
+                    UserDefaults.set(forKey: .xRayCoreVersion, value: newVersion)
                     // has new version
                     hasNewVersion = true
                     NSLog("has new version", newVersion)
@@ -95,7 +97,7 @@ class V2rayCore {
     }
 
     func download() {
-        let version = UserDefaults.get(forKey: .v2rayCoreVersion) ?? "v4.20.0"
+        let version = UserDefaults.get(forKey: .xRayCoreVersion) ?? "v1.4.2"
         let url = releaseUrl.replacingOccurrences(of: "${version}", with: version)
         NSLog("start download", version)
 
@@ -106,8 +108,8 @@ class V2rayCore {
             return
         }
 
-        // download file: /Application/V2rayU.app/Contents/Resources/v2ray-macos.zip
-        let fileUrl = URL.init(fileURLWithPath: shFile.path.replacingOccurrences(of: "/unzip.sh", with: "/v2ray-macos.zip"))
+        // download file: /Application/V2rayU.app/Contents/Resources/v2ray-macos-64.zip
+        let fileUrl = URL.init(fileURLWithPath: shFile.path.replacingOccurrences(of: "/unzip.sh", with: "/v2ray-macos-64.zip"))
         let destination: DownloadRequest.DownloadFileDestination = { _, _ in
             return (fileUrl, [.removePreviousFile, .createIntermediateDirectories])
         }
@@ -120,24 +122,22 @@ class V2rayCore {
                 .responseData { response in
                     switch response.result {
                     case .success(_):
-                        break
+                        if let _ = response.result.value {
+                            // make unzip.sh execable
+                            // chmod 777 unzip.sh
+                            let execable = "cd " + AppHomePath + " && /bin/chmod 777 ./unzip.sh"
+                            _ = shell(launchPath: "/bin/bash", arguments: ["-c", execable])
+
+                            // unzip v2ray-core
+                            // cmd: /bin/bash -c 'cd path && ./unzip.sh '
+                            let sh = "cd " + AppHomePath + " && ./unzip.sh && /bin/chmod -R 777 ./v2ray-core"
+                            // exec shell
+                            let res = shell(launchPath: "/bin/bash", arguments: ["-c", sh])
+                            NSLog("res:", sh, res!)
+                        }
                     case .failure(_):
                         NSLog("error with response status:")
                         return
-                    }
-
-                    if let _ = response.result.value {
-                        // make unzip.sh execable
-                        // chmod 777 unzip.sh
-                        let execable = "cd " + AppResourcesPath + " && /bin/chmod 777 ./unzip.sh"
-                        _ = shell(launchPath: "/bin/bash", arguments: ["-c", execable])
-
-                        // unzip v2ray-core
-                        // cmd: /bin/bash -c 'cd path && ./unzip.sh '
-                        let sh = "cd " + AppResourcesPath + " && ./unzip.sh && /bin/chmod -R 777 ./v2ray-core"
-                        // exec shell
-                        let res = shell(launchPath: "/bin/bash", arguments: ["-c", sh])
-                        NSLog("res:", sh, res!)
                     }
                 }
     }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15505" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -22,6 +22,7 @@
             <connections>
                 <outlet property="globalMode" destination="sZL-Iu-xAt" id="Iz8-oL-8dU"/>
                 <outlet property="manualMode" destination="hTu-27-5OL" id="lHt-aQ-ZNU"/>
+                <outlet property="newVersionItem" destination="SdL-DD-qZe" id="WXr-Gw-0HS"/>
                 <outlet property="pacMode" destination="NrZ-oB-7yd" id="d3C-wO-jAI"/>
                 <outlet property="serverItems" destination="cio-ej-HL5" id="0Z8-41-eCi"/>
                 <outlet property="statusMenu" destination="9n3-TW-9ur" id="Hgg-sa-fM8"/>
@@ -34,9 +35,28 @@
                 <menuItem title="V2ray-Core: On" enabled="NO" id="P34-uO-Vwf">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
-                <menuItem title="Turn v2ray-core Off" keyEquivalent="t" id="SML-EF-rdT">
+                <menuItem title="Turn v2ray-core Off" keyEquivalent="t" id="SML-EF-rdT" userLabel="Turn v2ray-core On">
                     <connections>
                         <action selector="start:" target="hcZ-V7-Dui" id="XIR-lL-vV2"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="K10-II-m5R"/>
+                <menuItem title="has new version" id="SdL-DD-qZe">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="goRelease:" target="hcZ-V7-Dui" id="yMr-mv-496"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="View config.json" id="b3o-tG-rp3">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="viewConfig:" target="hcZ-V7-Dui" id="wgb-Uh-Z1z"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="View Log" id="52m-v5-TzY">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="openLogs:" target="hcZ-V7-Dui" id="ebe-fD-cCz"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="q2e-iz-ozm"/>
@@ -80,10 +100,10 @@
                         <action selector="openPreferencePac:" target="hcZ-V7-Dui" id="q2a-9U-SCe"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Ping Speed..." tag="1" id="Ow7-xo-xhV">
+                <menuItem title="Ping Speed..." tag="1" id="A9g-Ks-No1">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
-                        <action selector="pingSpeed:" target="hcZ-V7-Dui" id="S0e-Q3-a8R"/>
+                        <action selector="pingSpeed:" target="hcZ-V7-Dui" id="Ldd-t9-Gzs"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="4r0-fk-xMy"/>
@@ -92,8 +112,7 @@
                         <action selector="ImportFromPasteboard:" target="hcZ-V7-Dui" id="aP0-Ao-OTD"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Scan QR Code From Screen" id="XHn-5w-qWM">
-                    <modifierMask key="keyEquivalentModifierMask"/>
+                <menuItem title="Scan QR Code From Screen" keyEquivalent="d" id="XHn-5w-qWM">
                     <connections>
                         <action selector="scanQrcode:" target="hcZ-V7-Dui" id="URj-Vl-1TY"/>
                     </connections>
@@ -110,19 +129,6 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="FfA-RW-Poe"/>
-                <menuItem title="View Log" id="52m-v5-TzY">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="openLogs:" target="hcZ-V7-Dui" id="ebe-fD-cCz"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="View config.json" id="b3o-tG-rp3">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="viewConfig:" target="hcZ-V7-Dui" id="wgb-Uh-Z1z"/>
-                    </connections>
-                </menuItem>
-                <menuItem isSeparatorItem="YES" id="K10-II-m5R"/>
                 <menuItem title="Preferences..." keyEquivalent="," id="6jp-RJ-ww9" userLabel="Preference">
                     <connections>
                         <action selector="openPreferenceGeneral:" target="hcZ-V7-Dui" id="ak7-LN-QXy"/>

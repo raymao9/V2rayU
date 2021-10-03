@@ -38,18 +38,18 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Te4-BT-hGI">
-                    <rect key="frame" x="167" y="189" width="78" height="16"/>
+                    <rect key="frame" x="172" y="189" width="152" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="linktofish.org" id="Qby-y7-vli">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="https://linktofish.org" id="Qby-y7-vli">
                         <font key="font" metaFont="systemUltraLight" size="12"/>
                         <color key="textColor" name="selectedContentBackgroundColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="systemIndigoColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e05-pp-m5L">
-                    <rect key="frame" x="167" y="168" width="113" height="16"/>
+                    <rect key="frame" x="172" y="167" width="122" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="tech@linktofish.org" id="Guc-nt-FeY">
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="tech@linktofish.org" id="Guc-nt-FeY">
                         <font key="font" metaFont="systemUltraLight" size="12"/>
                         <color key="textColor" name="selectedContentBackgroundColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="systemIndigoColor" catalog="System" colorSpace="catalog"/>
@@ -65,7 +65,7 @@
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oNz-CM-Geb">
-                    <rect key="frame" x="147" y="139" width="24" height="25"/>
+                    <rect key="frame" x="147" y="138" width="24" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="🔗" id="rUl-Lc-b4S">
                         <font key="font" size="12" name="AppleColorEmoji"/>
@@ -73,11 +73,20 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="huF-fy-g3j">
-                    <rect key="frame" x="141" y="92" width="158" height="14"/>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hji-yO-Zff">
+                    <rect key="frame" x="172" y="144" width="146" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Copyright © 2020 yanue.net" id="bCA-au-e3o">
-                        <font key="font" metaFont="controlContent" size="11"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="https://github.com/v2ray" id="Sw8-ch-1M9">
+                        <font key="font" metaFont="systemUltraLight" size="12"/>
+                        <color key="textColor" name="selectedContentBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="systemIndigoColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="huF-fy-g3j">
+                    <rect key="frame" x="142" y="92" width="156" height="14"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Copyright © 2021 yanue.net" id="bCA-au-e3o">
+                        <font key="font" metaFont="label" size="11"/>
                         <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -85,28 +94,19 @@
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gws-ge-QLa">
                     <rect key="frame" x="144" y="69" width="156" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" controlSize="mini" lineBreakMode="charWrapping" enabled="NO" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" title="based on v2ray-core v4.28.0" usesSingleLineMode="YES" bezelStyle="round" id="8bU-0Q-dTD">
+                    <textFieldCell key="cell" controlSize="mini" lineBreakMode="charWrapping" enabled="NO" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" title="based on Xray-core v1.4.2" usesSingleLineMode="YES" bezelStyle="round" id="8bU-0Q-dTD">
                         <font key="font" metaFont="menu" size="9"/>
                         <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GfP-Xl-Rdf">
-                    <rect key="frame" x="181" y="251" width="78" height="13"/>
+                    <rect key="frame" x="174" y="251" width="93" height="13"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Version 1.0.0.0" id="gsf-1V-bbM">
-                        <font key="font" metaFont="system" size="10"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Version 1.0" id="gsf-1V-bbM">
+                        <font key="font" metaFont="menu" size="10"/>
                         <color key="textColor" name="tertiaryLabelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hji-yO-Zff">
-                    <rect key="frame" x="165" y="146" width="106" height="16"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="github.com/v2ray" id="Sw8-ch-1M9">
-                        <font key="font" metaFont="systemUltraLight" size="12"/>
-                        <color key="textColor" name="selectedContentBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="systemIndigoColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
             </subviews>
